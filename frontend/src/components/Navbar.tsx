@@ -1,10 +1,12 @@
 import { SidebarTrigger } from "@/components/ui/sidebar"
 
-export const Navbar = () => {
+const Navbar = () => {
   return (
-    <div>
+    <div className="md:hidden">
       <SidebarTrigger/>
-      <h1>navbar</h1>
+      {/* <h1>navbar</h1> */}
     </div>
   )
 }
+
+export default Navbar

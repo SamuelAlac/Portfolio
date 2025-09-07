@@ -12,42 +12,43 @@ import {
 } from "@/components/ui/sidebar"
 import { ModeToggle } from "../mode-toggle"
 import { Profile } from "../profile"
+import { NavLink } from "react-router-dom"
 
 // Menu items.
 const items = [
   {
     title: "Home",
-    url: "#",
+    url: "/",
     icon: Home,
   },
   {
     title: "About",
-    url: "#",
+    url: "/About",
     icon: UserRound,
   },
   {
     title: "Dashboard",
-    url: "#",
+    url: "/",
     icon: ChartNoAxesCombined,
   },
   {
     title: "Achievements",
-    url: "#",
+    url: "/",
     icon: Trophy,
   },
   {
     title: "Projects",
-    url: "#",
+    url: "/",
     icon: FolderOpen,
   },
   {
     title: "Contact Me",
-    url: "#",
+    url: "/",
     icon: CircleUserRound,
   },
   {
     title: "Chatbot",
-    url: "#",
+    url: "/",
     icon: Bot
   },
 ]
@@ -58,16 +59,15 @@ export function AppSidebar() {
       <SidebarContent>
         <SidebarGroup>
           <Profile/>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url}>
+                    <NavLink to={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
-                    </a>
+                    </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}

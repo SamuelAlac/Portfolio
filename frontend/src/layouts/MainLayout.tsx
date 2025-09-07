@@ -1,9 +1,8 @@
 import { Outlet } from "react-router-dom"
-import { Footer } from "../components/Footer"
-import { Navbar } from "../components/Navbar"
 import { SidebarProvider } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/ui/app-sidebar"
 import { ThemeProvider } from "@/components/theme-provider"
+import Navbar from "@/components/Navbar"
 
 export const MainLayout = () => {
   return (
@@ -13,10 +12,9 @@ export const MainLayout = () => {
           <AppSidebar/>
         <main className="w-full flex flex-col">
             <Navbar/>
-            <div className="flex-grow">
+            <div className="[&_section]:bg-[#18181B] m-3 flex-grow">
               <Outlet/>
             </div>
-            <Footer/>
         </main>
         </SidebarProvider>
         </ThemeProvider>
