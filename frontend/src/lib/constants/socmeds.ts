@@ -1,0 +1,1 @@
+export const socmeds = ['/linkedin.svg', '/github.svg', '/facebook.svg', '/instagram.svg']

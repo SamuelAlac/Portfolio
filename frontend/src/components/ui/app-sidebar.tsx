@@ -33,12 +33,12 @@ const items = [
   },
   {
     title: "Achievements",
-    url: "/",
+    url: "/Achievements",
     icon: Trophy,
   },
   {
     title: "Projects",
-    url: "/",
+    url: "/Projects",
     icon: FolderOpen,
   },
   {
@@ -55,9 +55,9 @@ const items = [
 
 export function AppSidebar() {
   return (
-    <Sidebar  variant="sidebar">
+    <Sidebar  variant="floating">
       <SidebarContent>
-        <SidebarGroup>
+        <SidebarGroup className="space-y-5">
           <Profile/>
           <SidebarGroupContent>
             <SidebarMenu>

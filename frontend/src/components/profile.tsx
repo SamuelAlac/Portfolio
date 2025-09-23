@@ -3,13 +3,15 @@ import { Button } from "./ui/button"
 
 export const Profile = () => {
   return (
-    <div className="flex flex-col items-center space-y-1.5">
+    <div className="flex flex-col items-center space-y-2">
         <img src='/SamuelAlac.svg' className="h-24 rounded-full" alt="Samuel Vincent Alac" />
         <h1 className="text-lg">Samuel Vincent Alac</h1>
-        <p className="text-sm">Full-Stack Developer</p>
+        <p className="text-sm">Software Engineer</p>
+        <a href="/Alac_Resume.pdf" target="_blank">
         <Button variant='secondary' size='sm' className="w-40" onClick={() => alert('Downloading...')}>
             <Download /> Resume
         </Button>
+        </a>
     </div>
   )
 }

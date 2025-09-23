@@ -1,11 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { MainLayout } from './layouts/MainLayout.tsx'
 import HomePage from './pages/homepage/HomePage.tsx'
 import AboutPage from './pages/aboutpage/AboutPage.tsx'
+import AchievementsPage from './pages/achievementspage/AchievementsPage.tsx'
+import ProjectsPage from './pages/projectspage/ProjectsPage.tsx'
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,14 @@ const router = createBrowserRouter([
         path: '/About',
         element: <AboutPage/>,
       },
+      {
+        path: '/Achievements',
+        element: <AchievementsPage/>
+      },
+      {
+        path: '/Projects',
+        element: <ProjectsPage/>
+      }
     ]
   }
 ])

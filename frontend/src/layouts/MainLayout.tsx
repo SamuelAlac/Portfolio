@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom"
 import { SidebarProvider } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/ui/app-sidebar"
 import { ThemeProvider } from "@/components/theme-provider"
-import Navbar from "@/components/Navbar"
+import Navbar from "@/components/navbar"
 
 export const MainLayout = () => {
   return (

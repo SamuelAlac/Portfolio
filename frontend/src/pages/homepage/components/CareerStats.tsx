@@ -1,7 +1,11 @@
+import { SkillsCarousel } from "@/components/SkillsCarousel"
+
 export const CareerStats = () => {
   return (
-    <section className="md:min-w-98 max-w-md min-h-50">
-        Career Stats
+    <section className="max-w-210 min-h-75">
+        <div className="space-y-5">
+            {/* <SkillsCarousel/> */}
+        </div>
     </section>
   )
 }
