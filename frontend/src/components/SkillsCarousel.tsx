@@ -1,25 +1,17 @@
 import { Card, CardContent } from "@/components/ui/card"
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  type CarouselApi,
-} from "@/components/ui/carousel"
-import { useEffect, useState } from "react"
-import Autoplay from "embla-carousel-autoplay"
-import { skills } from "@/lib/constants/skills"
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import AutoScroll from 'embla-carousel-auto-scroll'
 
-export const SkillsCarousel = () => {
+export const SkillsCarousel = ({skills}: {skills: any}) => {
 
   return (
     <Carousel opts={{ loop: true }} plugins={[AutoScroll({ speed: 1, stopOnInteraction: false, stopOnMouseEnter: true })]}>
       <CarouselContent className="w-sm">
-        {skills.map((skill, index) => (
+        {skills.map((skill: any, index: number) => (
           <CarouselItem key={index} className="bg-dark basis-1/4 md:basis-1/4">
               <Card className="flex items-center">
                 <CardContent>
-                  <img src={skill.image} className=""/>
+                  <img src={skill.image} className="" title={skill.language}/>
                 </CardContent>
               </Card>
           </CarouselItem>

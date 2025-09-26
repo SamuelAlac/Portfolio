@@ -16,11 +16,28 @@ const ProjectsPage = () => {
             (ADS) which is MySQL
             </p>
                 <a href='' target="_blank">
-                    <Button className="absolute bottom-55 left-3 w-30 text-white bg-neutral-600 hover:bg-neutral-950
+                    <Button className="absolute top-35 left-3 w-30 text-white bg-neutral-600 hover:bg-neutral-950
                     md:opacity-0 md:group-hover:opacity-100">
-                        Show credential
+                        Show Preview
                     </Button>
                 </a>
+            <div className="flex mx-3 gap-1.5">
+                <Badge variant="secondary">
+                    <img src="/react.js.svg" alt="" className="w-5"/>
+                </Badge>
+
+                <Badge variant="secondary">
+                    <img src="/node.js.svg" alt="" className="w-5"/>
+                </Badge>
+
+                <Badge variant="secondary">
+                    <img src="/javascript.svg" alt="" className="w-5"/>
+                </Badge>
+
+                <Badge variant="secondary">
+                    <img src="/css.svg" alt="" className="w-5"/>
+                </Badge>
+            </div>
         </section>
 
         <section className="w-full h-full text-center relative group">
