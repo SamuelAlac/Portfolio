@@ -1,6 +1,6 @@
 export const Education = () => {
   return (
-    <section className="max-w-210 min-h-80 bg-black bg-blend-overlay bg-[url(/BulacanStateUniversityMobile.webp)]
+    <section className="w-full min-h-80 bg-black bg-blend-overlay bg-[url(/BulacanStateUniversityMobile.webp)]
       md:bg-[url(/BulacanStateUniversity.webp)] bg-cover bg-center">
         <div className="p-3 space-y-1.5">
           <h1 className="text-lg md:text-3xl">Education</h1>

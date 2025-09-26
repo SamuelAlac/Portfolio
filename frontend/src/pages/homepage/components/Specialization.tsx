@@ -3,7 +3,7 @@ import { FaCode } from "react-icons/fa";
 
 export const Specialization = () => {
   return (
-    <section className="md:min-w-98 max-w-md min-h-65">
+    <section className="w-full min-h-65">
         <div className="flex flex-col gap-6 p-3">
           <h1 className="text-3xl">Specialization</h1>
           {specializations.map((specialization, index) =>(

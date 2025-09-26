@@ -2,8 +2,8 @@ import { Button } from "./ui/button"
 
 export const AchievementCard = ({ achievement }: { achievement: any }) => {
   return (
-    <section className="md:min-w-70 h-68 text-center relative group">
-        <img src={achievement.photo} alt="" className="w-75 h-50" />
+    <section className="w-full h-full text-center relative group">
+        <img src={achievement.photo} alt="" className="w-full h-50" />
         <h1>{achievement.certificate}</h1>
         <p className="text-sm text-neutral-400">{achievement.provider}</p>
             <a href={achievement.proof} target="_blank">

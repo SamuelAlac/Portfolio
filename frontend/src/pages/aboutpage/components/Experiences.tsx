@@ -1,6 +1,6 @@
 export const Experiences = () => {
   return (
-    <section className="md:min-w-98 max-w-md min-h-165">
+    <section className="w-full min-h-165">
         <div className="flex flex-col p-2 space-y-4">
           <h1 className="text-2xl">Experience</h1>
           <div className="flex flex-col gap-2 md:w-92">

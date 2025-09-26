@@ -1,6 +1,6 @@
 export const AboutMe = () => {
   return (
-    <section className="max-w-210 min-h-80">
+    <section className="w-full min-h-80">
         <div className="p-3 space-y-5">
           <h1 className="text-lg md:text-3xl">About</h1>
           <div className="max-w-180">

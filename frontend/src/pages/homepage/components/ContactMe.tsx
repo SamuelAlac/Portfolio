@@ -2,7 +2,7 @@ import { socmeds } from "@/lib/constants/socmeds"
 
 export const ContactMe = () => {
   return (
-    <section className="md:min-w-98 max-w-md min-h-30">
+    <section className="w-full min-h-30">
         <div className="flex flex-col gap-6 p-3">
           <h1 className="text-3xl">Contact Me</h1>
           <div className="flex flex-row gap-8">
