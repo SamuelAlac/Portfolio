@@ -8,7 +8,7 @@ export const Profile = () => {
         <h1 className="text-lg">Samuel Vincent Alac</h1>
         <p className="text-sm">Software Engineer</p>
         <a href="/Alac_Resume.pdf" target="_blank">
-        <Button variant='secondary' size='sm' className="w-40" onClick={() => alert('Downloading...')}>
+        <Button variant='secondary' size='sm' className="w-40">
             <Download /> Resume
         </Button>
         </a>

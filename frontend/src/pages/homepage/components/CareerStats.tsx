@@ -1,5 +1,3 @@
-import { SkillsCarousel } from "@/components/SkillsCarousel"
-
 export const CareerStats = () => {
   return (
     <section className="w-full min-h-75">

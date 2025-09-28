@@ -17,6 +17,7 @@ export const backend = [
     { language: 'SpringBoot', image: '/skills/backend/spring.svg' },
     { language: 'Python', image: '/skills/backend/python.svg' },
     { language: 'Django', image: '/skills/backend/django.svg' },
+    { language: 'Microsoft SQL Server', image: '/skills/backend/MicrosoftSQLServer.svg' },
     { language: 'MySQL', image: '/skills/backend/mysql.svg' },
     { language: 'SQLite', image: '/skills/backend/sqlite.svg' },
     { language: 'Firebase', image: '/skills/backend/firebase.svg' },
