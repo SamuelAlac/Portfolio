@@ -48,7 +48,7 @@ const items = [
   },
   {
     title: "Chatbot",
-    url: "/",
+    url: "/Chatbot",
     icon: Bot
   },
 ]

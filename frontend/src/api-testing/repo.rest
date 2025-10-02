@@ -1,3 +1,6 @@
 
-### GET REPOS
-GET http://localhost:8000/api/repos/
+### GET REPOSITORY
+GET http://localhost:8000/api/github/repository/
+
+### GET CONTRIBUTIONS
+GET http://localhost:8000/api/github/contributions/
