@@ -1,10 +1,10 @@
-import { Blogs } from "./components/Blogs"
+import { ChatInfo } from "./components/ChatInfo"
 
-const BlogPage = () => {
+const ChatbotPage = () => {
   return (
     <div className="space-y-5 md:flex flex-col lg:flex-row md:space-y-0">
      <div className="md:flex-grow space-y-5">
-        <Blogs/>
+        <ChatInfo/>
      </div>
 
      <div className="space-y-5">
@@ -14,4 +14,4 @@ const BlogPage = () => {
   )
 }
 
-export default BlogPage
+export default ChatbotPage

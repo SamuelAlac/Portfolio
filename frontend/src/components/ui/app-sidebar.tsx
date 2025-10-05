@@ -43,12 +43,12 @@ const items = [
   },
   {
     title: "Contact Me",
-    url: "/",
+    url: "/ContactMe",
     icon: CircleUserRound,
   },
   {
-    title: "Blogs",
-    url: "/Blogs",
+    title: "Chatbot",
+    url: "/Chatbot",
     icon: Bot
   },
 ]

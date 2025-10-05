@@ -1,10 +1,6 @@
-import { useContributionsQuery } from "@/hooks/useContributionsQuery"
-
 import GithubCalendar from 'react-github-calendar'
 
 export const ContributionStats = () => {
-
-  // const { data: contributions = [], isError, isLoading } = useContributionsQuery()
 
   return (
     <section className="w-full min-h-65">

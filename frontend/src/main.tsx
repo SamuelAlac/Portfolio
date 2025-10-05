@@ -8,7 +8,7 @@ import AboutPage from './pages/aboutpage/AboutPage.tsx'
 import AchievementsPage from './pages/achievementspage/AchievementsPage.tsx'
 import ProjectsPage from './pages/projectspage/ProjectsPage.tsx'
 import DashboardPage from './pages/dashboardpage/DashboardPage.tsx'
-import BlogPage from './pages/blogpage/BlogPage.tsx'
+import ChatbotPage from './pages/chatbotpage/ChatbotPage.tsx'
 
 const client = new QueryClient();
 const router = createBrowserRouter([
@@ -37,8 +37,8 @@ const router = createBrowserRouter([
         element: <ProjectsPage/>
       },
       {
-        path: '/Blogs',
-        element: <BlogPage/>
+        path: '/Chatbot',
+        element: <ChatbotPage/>
       }
     ]
   }
