@@ -1,4 +1,3 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
@@ -9,7 +8,7 @@ import AboutPage from './pages/aboutpage/AboutPage.tsx'
 import AchievementsPage from './pages/achievementspage/AchievementsPage.tsx'
 import ProjectsPage from './pages/projectspage/ProjectsPage.tsx'
 import DashboardPage from './pages/dashboardpage/DashboardPage.tsx'
-import ChatbotPage from './pages/chatbotpage/ChatbotPage.tsx'
+import BlogPage from './pages/blogpage/BlogPage.tsx'
 
 const client = new QueryClient();
 const router = createBrowserRouter([
@@ -38,8 +37,8 @@ const router = createBrowserRouter([
         element: <ProjectsPage/>
       },
       {
-        path: '/Chatbot',
-        element: <ChatbotPage/>
+        path: '/Blogs',
+        element: <BlogPage/>
       }
     ]
   }

@@ -47,8 +47,8 @@ const items = [
     icon: CircleUserRound,
   },
   {
-    title: "Chatbot",
-    url: "/Chatbot",
+    title: "Blogs",
+    url: "/Blogs",
     icon: Bot
   },
 ]

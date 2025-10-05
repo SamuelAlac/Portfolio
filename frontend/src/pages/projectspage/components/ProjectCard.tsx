@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom"
-import { Badge } from "./ui/badge"
-    // console.log(projects?.[0]?.name)
-    // console.log(projects?.[0]?.description)
-    // console.log(projects?.[0]?.html_url)
-    // console.log(projects?.[0]?.created_at)
+import { Badge } from "@/components/ui/badge"
+
 export const ProjectCard = ({ project }: { project:any }) => {
     console.log(project.name)
   return (
