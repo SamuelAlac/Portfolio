@@ -2,7 +2,7 @@ require('dotenv').config();
 const { GraphQLClient } = require('graphql-request')
 
 // @desc    GET ALL REPOSITORY
-// @route   GET api/repository/
+// @route   GET api/github/repository/
 exports.getRepository = async (req, res) =>{
     try{
         const response = await fetch('https://api.github.com/users/SamuelAlac/repos',{
@@ -16,12 +16,13 @@ exports.getRepository = async (req, res) =>{
         }
         res.status(200).json(data)
     }catch(error){
-        res.status(500).json({ error: "Something went wrong" });
+        console.log(error)
+        return res.status(500).json({ message: `Something went wrong: ${error}` });
     }
 }
 
 // @desc    GET ALL CONTRIBUTION
-// @route   GET api/contributions/
+// @route   GET api/github/contributions/
 exports.getContributions = async (req, res) =>{
     try {
         const endpoint = "https://api.github.com/graphql";
@@ -52,6 +53,7 @@ exports.getContributions = async (req, res) =>{
         const data = await client.request(query);
         res.status(200).json(data);
   } catch (error) {
-        res.status(500).json({ error: "Something went wrong" });
+    console.log(error)
+    return res.status(500).json({ message: `Something went wrong: ${error}` });
   }
 }

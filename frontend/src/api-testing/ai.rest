@@ -1,0 +1,11 @@
+
+### GET CHAT HISTORY
+GET http://localhost:8000/api/ai/history/
+
+### POST CHAT MESSAGE
+POST http://localhost:8000/api/ai/message/
+Content-Type: application/json
+
+{
+    "input": "What is discord bot"
+}
