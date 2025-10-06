@@ -7,5 +7,5 @@ POST http://localhost:8000/api/ai/message/
 Content-Type: application/json
 
 {
-    "input": "does he know springboot"
+    "input": "tell me more about his project, what do you think is the best"
 }

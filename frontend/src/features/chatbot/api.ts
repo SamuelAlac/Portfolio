@@ -9,9 +9,10 @@ export const getChatHistory = async () =>{
     }
 }
 
-export const postChatMessage = async () =>{
+export const postChatMessage = async (messageData: { input: string }) =>{
     try {
-        
+        const res = await axios.post('/ai/message', messageData)
+        return res.data;
     } catch (err) {
         console.log(`Failed to post chat message: ${err}`)
     }

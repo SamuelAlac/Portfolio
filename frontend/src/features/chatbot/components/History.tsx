@@ -1,7 +1,5 @@
 import { useEffect, useRef } from "react"
 import { useChatHistory } from "../hooks"
-import { BsRobot } from "react-icons/bs";
-import { FaUserTie } from "react-icons/fa6";
 
 export const History = () => {
   const { data: history = [], isError, isLoading } = useChatHistory()
@@ -11,6 +9,30 @@ export const History = () => {
   useEffect(() =>{
     slideToLastMessage.current?.scrollIntoView({ behavior: 'smooth' })
   },[history])
+
+  if (isLoading) {
+    return (
+      <div className="mt-10 px-3 text-white text-center">
+        <p className="text-neutral-400">Loading chat history...</p>
+      </div>
+    )
+  }
+
+  if (isError) {
+    return (
+      <div className="mt-10 px-3 text-white text-center">
+        <p className="text-red-400">Failed to load chat history. Please try again later.</p>
+      </div>
+    )
+  }
+
+  if (!history.length) {
+    return (
+      <div className="mt-10 px-3 text-white text-center">
+        <p className="text-neutral-400">No messages yet. Start the conversation!</p>
+      </div>
+    )
+  }
 
   return (
     <div className="mt-10 px-3 text-white space-y-5">
