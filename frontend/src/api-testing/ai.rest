@@ -7,5 +7,5 @@ POST http://localhost:8000/api/ai/message/
 Content-Type: application/json
 
 {
-    "input": "What is discord bot"
+    "input": "does he know springboot"
 }

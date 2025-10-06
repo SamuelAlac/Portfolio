@@ -1,4 +1,5 @@
 import { ChatInfo } from "./components/ChatInfo"
+import { ChatStatus } from "./components/ChatStatus"
 
 const ChatbotPage = () => {
   return (
@@ -7,8 +8,8 @@ const ChatbotPage = () => {
         <ChatInfo/>
      </div>
 
-     <div className="space-y-5">
-      
+     <div className="space-y-5 md:mt-5 lg:ms-5 lg:mt-0">
+        <ChatStatus/>
      </div>
     </div>
   )
