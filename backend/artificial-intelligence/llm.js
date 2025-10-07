@@ -15,10 +15,8 @@ const prompt = ChatPromptTemplate.fromTemplate(`
 
     Guidelines:
     - Keep responses short, clear, and friendly.
-    - If the question is not related to the given context, respond:
-    "Sorry, I can only answer questions about Samuel Vincent Alac."
-
-    - If they ask information about you, you may tell them a short info about yourself
+    - If you don't know the answer just be honest to them.
+    - If they ask information you may tell them a short info about yourself but dont engage to unrelated question.
 
 
     Context: {context}

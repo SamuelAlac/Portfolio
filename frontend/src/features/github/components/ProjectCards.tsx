@@ -1,4 +1,4 @@
-import { ProjectCard } from "@/pages/projectspage/components/ProjectCard";
+import { ProjectCard } from "@/features/github/components/ProjectCard";
 import { useProjects } from "@/features/github/hooks";
 
 export const ProjectCards = () => {

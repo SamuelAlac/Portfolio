@@ -13,11 +13,26 @@ export const usePostChatMessage = () =>{
     return useMutation({
         mutationKey: ['postMessage'],
         mutationFn: postChatMessage,
-        onSuccess: () =>{
-            queryClient.invalidateQueries({queryKey: ['chatHistory'] });
+        onMutate: async (newMessage) =>{
+            queryClient.cancelQueries({queryKey: ['chatHistory'] });
+            const previousChat = queryClient.getQueryData(['chatHistory']);
+            queryClient.setQueryData(['chatHistory'], (old: any)=>[
+                ...(old || []),
+                {
+                    id: Date.now(),
+                    type: 'human',
+                    content: newMessage.input,
+                },
+            ]);
+            return { previousChat };
         },
-        onError: (err) =>{
-            console.log(`Error creating post chat message mutation: ${err}`);
+        onError: (_err, _newMessage, context) =>{
+            if(context?.previousChat) {
+                queryClient.setQueryData(['chatHistory'], context?.previousChat)
+            }
+        },
+        onSettled: () =>{
+            queryClient.invalidateQueries({ queryKey: ['chatHistory'] });
         },
     })
 }
