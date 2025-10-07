@@ -4,13 +4,16 @@ const cors = require('cors');
 const { GraphQLClient } = require('graphql-request')
 const app = express();
 const githubRoutes = require('./routes/github')
-const aiRoutes = require('./routes/ai')
+const aiRoutes = require('./routes/ai');
+const { logger } = require('./middlware/logger');
 
 app.use(cors());
 const PORT = process.env.PORT;
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}))
+
+app.use(logger)
 
 app.use('/api/github', githubRoutes)
 

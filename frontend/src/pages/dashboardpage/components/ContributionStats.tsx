@@ -10,7 +10,7 @@ export const ContributionStats = () => {
           <div className="w-full h-55 flex">
             <div className="flex-grow outline-1">
               <div className="w-full">
-                <GithubCalendar username="samuelalac" year={2025} blockMargin={5} blockSize={15} showWeekdayLabels/>
+                <GithubCalendar username="samuelalac" blockMargin={5} blockSize={15} showWeekdayLabels/>
               </div>
             </div>
 

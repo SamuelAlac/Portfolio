@@ -1,6 +1,9 @@
 
-### GET REPOSITORY
+### GET ALL REPOSITORY
 GET http://localhost:8000/api/github/repository/
+
+### GET REPOSITORY
+GET http://localhost:8000/api/github/repository/Portfolio/
 
 ### GET CONTRIBUTIONS
 GET http://localhost:8000/api/github/contributions/
