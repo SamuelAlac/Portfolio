@@ -1,4 +1,4 @@
-import { ChartNoAxesCombined, Home, UserRound, Trophy, FolderOpen, CircleUserRound, Bot } from "lucide-react"
+import { ChartNoAxesCombined, Home, UserRound, Trophy, FolderOpen, BookText, Bot } from "lucide-react"
 
 import {
   Sidebar,
@@ -42,9 +42,9 @@ const items = [
     icon: FolderOpen,
   },
   {
-    title: "Contact Me",
-    url: "/ContactMe",
-    icon: CircleUserRound,
+    title: "Blogs",
+    url: "/Blogs",
+    icon: BookText,
   },
   {
     title: "Chatbot",

@@ -10,6 +10,7 @@ import ProjectsPage from './pages/projectspage/ProjectsPage.tsx'
 import DashboardPage from './pages/dashboardpage/DashboardPage.tsx'
 import ChatbotPage from './pages/chatbotpage/ChatbotPage.tsx'
 import ProjectDetailPage from './pages/projectspage/view/ProjectDetailPage.tsx'
+import BlogPage from './pages/blogpage/BlogPage.tsx'
 
 const client = new QueryClient();
 const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
           { index: true, element: <ProjectsPage/> },
           { path: ':repo', element: <ProjectDetailPage/> }
         ]
+      },
+      {
+        path: '/Blogs',
+        element: <BlogPage/>
       },
       {
         path: '/Chatbot',
