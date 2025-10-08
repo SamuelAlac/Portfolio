@@ -1,8 +1,9 @@
 require('dotenv').config();
 const { createStuffDocumentsChain } = require('langchain/chains/combine_documents')
 const { createRetrievalChain } = require('langchain/chains/retrieval')
+const { ConversationChain } = require('langchain/chains')
 
-const { llm, prompt } = require('./llm')
+const { llm, prompt, blogMemory, blogMakerPrompt } = require('./llm')
 
 const createChain = async (vectorStore) =>{
     try{
@@ -19,4 +20,6 @@ const createChain = async (vectorStore) =>{
     }
 }
 
-module.exports = { createChain };
+const blogChain = new ConversationChain({ llm, prompt: blogMakerPrompt, memory: blogMemory })
+
+module.exports = { createChain, blogChain };

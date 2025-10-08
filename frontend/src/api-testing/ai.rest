@@ -9,3 +9,11 @@ Content-Type: application/json
 {
     "input": "tell me more about his project, what do you think is the best"
 }
+
+### POST PAGE BLOG
+POST http://localhost:8000/api/ai/blog/
+Content-Type: application/json
+
+{
+    "topic": "The Role of AI in Programming"
+}

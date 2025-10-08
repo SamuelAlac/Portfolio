@@ -1,5 +1,5 @@
-const { createChain } = require("../artificial-intelligence/chain");
-const { memory } = require("../artificial-intelligence/llm");
+const { createChain, blogChain } = require("../artificial-intelligence/chain");
+const { memory, blogMemory } = require("../artificial-intelligence/llm");
 const { createVectorStore } = require("../artificial-intelligence/loader");
 
 // @desc    GET Chat History
@@ -41,5 +41,19 @@ exports.postChat = async (req, res, next) =>{
     }catch(error){
         console.log(error)
         return res.status(500).json({ message: `Something went wrong: ${error}` });
+    }
+}
+
+// @desc    POST Page Blog
+// @route   POST api/ai/blog/
+exports.postBlog = async (req, res, next) =>{
+    try {
+        const  blogTopic = req.body.topic 
+        const response = await blogChain.invoke({ topic: blogTopic});
+        console.log(await blogMemory.loadMemoryVariables())
+        return res.status(200).json({ blog: response })
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({ message: `Something went wrong: ${error}` }); 
     }
 }
