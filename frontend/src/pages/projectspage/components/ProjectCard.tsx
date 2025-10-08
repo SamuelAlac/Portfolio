@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogTrigger, DialogContent, DialogHeader,
 DialogTitle, DialogFooter, DialogDescription, DialogClose } from '@/components/ui/dialog'
+import { Link } from "react-router-dom"
 
 export const ProjectCard = ({ project }: { project: any }) => {
   return (
@@ -19,10 +20,10 @@ export const ProjectCard = ({ project }: { project: any }) => {
             </div>
             <Dialog>
                 <DialogTrigger asChild>
-                <Button className="absolute top-35 left-3 w-30 text-white bg-neutral-600 hover:bg-neutral-950
+                <Link to={`/Projects/${project.repo}`} className="p-1.5 rounded-4xl absolute top-33 left-3 w-30 text-white bg-neutral-600 hover:bg-neutral-950
                 md:opacity-0 md:group-hover:opacity-100">
                     Show Preview
-                </Button>
+                </Link>
                 </DialogTrigger>
                 <EnrollmentSystemDialog/>
             </Dialog>

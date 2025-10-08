@@ -39,8 +39,6 @@ Bulacan State University, Malolos, Bulacan
 ## Projects
 
 ### Enrollment System – Academic Records Platform  
-- Built using **Java (Swing GUI)** for enrollment, enabling staff to manage enrollees **2x faster** than paper-based systems.  
-- Created a **MySQL relational database schema**, reducing record errors by **60%** compared to manual processes.
 - This is our project during **2nd year** on **Object-Oriented Programming (OOP)** and **Advanced Database Systems (ADS)**
 - This project is built in **Apache NetBeans IDE** using **Java** and **MySQL** with **Microsoft SQL Server** for database management.
 - - The UI is designed using **Java (Swing GUI)**.

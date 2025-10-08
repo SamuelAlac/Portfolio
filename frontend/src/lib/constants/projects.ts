@@ -1,5 +1,6 @@
 export const projects = [
     {
+        repo: 'Enrollment-System',
         name: 'Enrollment System',
         image: '/StudentEnrollment.png',
         startDate: '2024',
@@ -11,6 +12,7 @@ export const projects = [
         ],
     },
     {
+        repo: 'PocketExpress',
         name: 'Pocket Express',
         image: '/PocketExpress.png',
         startDate: '2024',
@@ -21,6 +23,7 @@ export const projects = [
         ],
     },
     {
+        repo: 'Travel-Tales',
         name: 'Travel Tales',
         image: '/TravelTales.png',
         startDate: '2025',
@@ -38,6 +41,7 @@ export const projects = [
         ],
     },
     {
+        repo: 'GuideBot',
         name: 'Guide Bot',
         image: '/GuideBot.png',
         startDate: '2025',

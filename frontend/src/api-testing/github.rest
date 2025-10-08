@@ -3,7 +3,7 @@
 GET http://localhost:8000/api/github/repository/
 
 ### GET REPOSITORY
-GET http://localhost:8000/api/github/repository/Portfolio/
+GET http://localhost:8000/api/github/repository/BSIT-2DG2-EnrollmentSystem/
 
 ### GET CONTRIBUTIONS
 GET http://localhost:8000/api/github/contributions/

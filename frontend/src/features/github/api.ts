@@ -5,7 +5,16 @@ export const getProjects = async () =>{
         const res = await axios.get('/github/repository')
         return res.data;
     } catch (err) {
-        console.log(`Failed to get github repository: ${err}`)
+        console.log(`Failed to get github repositories: ${err}`)
+    }
+}
+
+export const getProject = async ({ repo }: { repo: string }) =>{
+    try {
+        const res = await axios.get(`/github/repository/${repo}`)
+        return res.data;
+    } catch (err) {
+        console.log(`Failed to get github repository`)
     }
 }
 
