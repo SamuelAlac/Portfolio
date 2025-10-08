@@ -17,3 +17,6 @@ Content-Type: application/json
 {
     "topic": "The Role of AI in Programming"
 }
+
+### GET PAGE BLOG
+GET http://localhost:8000/api/ai/blog/

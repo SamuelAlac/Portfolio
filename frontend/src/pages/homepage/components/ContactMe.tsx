@@ -1,3 +1,4 @@
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 import { socials } from "@/lib/constants/socmeds"
 import { Link } from "react-router-dom"
 
@@ -9,7 +10,14 @@ export const ContactMe = () => {
           <div className="flex flex-row gap-8">
             {socials.map((social, index) =>(
               <Link to={social.link} target="_blank" className="transition ease-in-out hover:scale-125">
-                <img key={index} src={social.img} alt={social.name} title={social.link} className="h-8" />
+                <Tooltip>
+                  <TooltipTrigger>
+                    <img key={index} src={social.img} alt={social.name} title={social.link} className="h-8" />
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <span>{social.name}</span>
+                  </TooltipContent>
+                </Tooltip>
               </Link>
             ))}
           </div>

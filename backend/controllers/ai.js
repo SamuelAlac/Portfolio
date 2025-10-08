@@ -50,10 +50,26 @@ exports.postBlog = async (req, res, next) =>{
     try {
         const  blogTopic = req.body.topic 
         const response = await blogChain.invoke({ topic: blogTopic});
-        console.log(await blogMemory.loadMemoryVariables())
-        return res.status(200).json({ blog: response })
+        return res.status(200).json({ human: blogTopic, ai: response.response })
     } catch (error) {
         console.log(error)
         return res.status(500).json({ message: `Something went wrong: ${error}` }); 
+    }
+}
+
+exports.getBlog = async (req, res, next) =>{
+    try {
+        const messages = await blogMemory.chatHistory.getMessages();
+        const history = messages.map(message =>{
+            return{
+                type: message.getType?.(),
+                content: message.content,
+            }
+        })
+        
+        return res.status(200).json({ history })
+    } catch (error) {
+        console.log(error)
+        return res.status(200).json({ message: `Something went wrong: ${error}` })
     }
 }
