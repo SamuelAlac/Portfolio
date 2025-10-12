@@ -9,7 +9,7 @@ export const ContactMe = () => {
           <h1 className="text-3xl">Contact Me</h1>
           <div className="flex flex-row gap-8">
             {socials.map((social, index) =>(
-              <Link to={social.link} target="_blank" className="transition ease-in-out hover:scale-125">
+              <Link key={index} to={social.link} target="_blank" className="transition ease-in-out hover:scale-125">
                 <Tooltip>
                   <TooltipTrigger>
                     <img key={index} src={social.img} alt={social.name} title={social.link} className="h-8" />

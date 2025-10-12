@@ -11,6 +11,7 @@ import DashboardPage from './pages/dashboardpage/DashboardPage.tsx'
 import ChatbotPage from './pages/chatbotpage/ChatbotPage.tsx'
 import ProjectDetailPage from './pages/projectspage/view/ProjectDetailPage.tsx'
 import BlogPage from './pages/blogpage/BlogPage.tsx'
+import { HelmetProvider } from 'react-helmet-async'
 
 const client = new QueryClient();
 const router = createBrowserRouter([
@@ -54,7 +55,9 @@ const router = createBrowserRouter([
 ])
 
 createRoot(document.getElementById('root')!).render(
-  <QueryClientProvider client={client}>
-    <RouterProvider router={router} />
-  </QueryClientProvider>,
+  <HelmetProvider>
+    <QueryClientProvider client={client}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>,
+  </HelmetProvider>
 )
