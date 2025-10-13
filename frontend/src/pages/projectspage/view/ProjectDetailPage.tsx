@@ -27,7 +27,7 @@ const ProjectDetailPage = () => {
   return (
     <section className="p-3 h-full w-full">
       <div>
-        <h1 className="text-center text-3xl">{repo}</h1>
+        {/* <h1 className="text-center text-3xl">{repo}</h1> */}
         <ReadMeViewer readMe={project.readMe}/>
       </div>
     </section>
