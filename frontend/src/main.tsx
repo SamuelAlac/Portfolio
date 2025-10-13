@@ -55,9 +55,7 @@ const router = createBrowserRouter([
 ])
 
 createRoot(document.getElementById('root')!).render(
-  <HelmetProvider>
     <QueryClientProvider client={client}>
       <RouterProvider router={router} />
     </QueryClientProvider>,
-  </HelmetProvider>
 )

@@ -5,12 +5,10 @@ import {
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { ModeToggle } from "../mode-toggle"
 import { Profile } from "../profile"
 import { NavLink } from "react-router-dom"
 
@@ -72,7 +70,6 @@ export function AppSidebar() {
                 </SidebarMenuItem>
               ))}
             </SidebarMenu>
-              <ModeToggle/>
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
