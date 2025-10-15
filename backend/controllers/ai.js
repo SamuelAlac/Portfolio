@@ -70,6 +70,6 @@ exports.getBlog = async (req, res, next) =>{
         return res.status(200).json({ history })
     } catch (error) {
         console.log(error)
-        return res.status(200).json({ message: `Something went wrong: ${error}` })
+        return res.status(500).json({ message: `Something went wrong: ${error}` })
     }
 }
