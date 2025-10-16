@@ -3,16 +3,16 @@ const { loginUser, getAuthenticatedUser, logoutUser, checkLoginStatus } = requir
 const authenticatedUser = require('../middlware/auth');
 const router = express.Router()
 
-// LOGIN USER to /auth/google/secret
+// LOGIN USER to /api/auth/google/secret
 router.post('/secret', loginUser)
 
-// GET AUTHENTICATED USER from auth/google/authenticated
+// GET AUTHENTICATED USER from /api/auth/google/authenticated
 router.get('/authenticated', authenticatedUser , getAuthenticatedUser)
 
-// LOGOUT USER to /auth/google/logout
+// LOGOUT USER to /api/auth/google/logout
 router.get('/logout', logoutUser)
 
-// CHECK USER LOGIN STATUS from /auth/google/status
+// CHECK USER LOGIN STATUS from /api/auth/google/status
 router.get('/status', authenticatedUser, checkLoginStatus)
 
 module.exports = router;

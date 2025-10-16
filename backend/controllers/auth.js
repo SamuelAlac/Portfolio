@@ -4,6 +4,9 @@ const jwt = require('jsonwebtoken')
 const secretKey = require('../secret.json')
 const Login = require('../schema/login.js');
 
+
+// @desc    POST USER
+// @route   POST api/auth/google/secret
 exports.loginUser = async (req, res) =>{
     const client = new OAuth2Client(process.env.OAUTH_CLIENT_ID);
     const authID = req.body.authID;
@@ -25,6 +28,8 @@ exports.loginUser = async (req, res) =>{
     }
 }
 
+// @desc    GET AUTHENTICATED USER
+// @route   GET api/auth/google/authenticated
 exports.getAuthenticatedUser = async (req, res) =>{
     try {
         const data = await Login.find({})
@@ -35,6 +40,8 @@ exports.getAuthenticatedUser = async (req, res) =>{
     }
 }
 
+// @desc    POST LOGOUT USER
+// @route   POST api/auth/google/logout
 exports.logoutUser = async (req, res) =>{
     try {
         res.clearCookie('login').json({ message: 'Successfully logged out', success: true })
@@ -44,6 +51,8 @@ exports.logoutUser = async (req, res) =>{
     }
 }
 
+// @desc    GET USER LOGIN STATUS
+// @route   GET api/auth/google/status
 exports. checkLoginStatus = async (req, res) =>{
     try {
         res.status(200).json({ message: 'User already logged in', success: true })

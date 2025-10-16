@@ -1,0 +1,2 @@
+### GET AUTHENTICATED USER
+GET http://localhost:8000/api/auth/google/authenticated

@@ -11,7 +11,9 @@ import DashboardPage from './pages/dashboardpage/DashboardPage.tsx'
 import ChatbotPage from './pages/chatbotpage/ChatbotPage.tsx'
 import ProjectDetailPage from './pages/projectspage/view/ProjectDetailPage.tsx'
 import BlogPage from './pages/blogpage/BlogPage.tsx'
-import { HelmetProvider } from 'react-helmet-async'
+import { GoogleOAuthProvider } from '@react-oauth/google'
+import { Provider } from 'react-redux'
+import { store } from './store/store.ts'
 
 const client = new QueryClient();
 const router = createBrowserRouter([
@@ -55,7 +57,11 @@ const router = createBrowserRouter([
 ])
 
 createRoot(document.getElementById('root')!).render(
-    <QueryClientProvider client={client}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>,
+    <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
+      <Provider store={store}>
+      <QueryClientProvider client={client}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+      </Provider>
+    </GoogleOAuthProvider>
 )

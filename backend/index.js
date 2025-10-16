@@ -27,7 +27,7 @@ app.use('/api/github', githubRoutes)
 
 app.use('/api/ai', aiRoutes)
 
-app.use('/auth/google', authRoutes)
+app.use('/api/auth/google', authRoutes)
 
 app.listen(PORT, () =>{
     console.log(`Server running on localhost:`+PORT)
