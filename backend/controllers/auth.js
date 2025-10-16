@@ -17,11 +17,13 @@ exports.loginUser = async (req, res) =>{
         })
         
         const { name, email, picture } = ticket.getPayload()
-        const loginToken = jwt.sign(`${email}`, secretKey.web)
+        const loginToken = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: '1h' })
 
-        const user = await Login.findOneAndUpdate({ email }, { name, picture }, { new: true, upsert: true })
+        await Login.findOneAndUpdate({ email }, { name, picture }, { new: true, upsert: true })
 
-        res.status(200).cookie('login', loginToken, { expire: 360000 + Date.now() }).json({ message: 'Sucessfully logged in', success: true })
+        res.status(200)
+        .cookie('login', loginToken, { httpOnly: true, sameSite: 'lax', secure: process.env.NODE_ENV === 'production', maxAge: 60 * 60 * 1000 })
+        .json({ message: 'Sucessfully logged in', success: true, user: { name, email, picture } })
     } catch (error) {
         console.log(error)
         return res.status(500).json({ message: `Something went wrong: ${error}` })
@@ -32,11 +34,20 @@ exports.loginUser = async (req, res) =>{
 // @route   GET api/auth/google/authenticated
 exports.getAuthenticatedUser = async (req, res) =>{
     try {
-        const data = await Login.find({})
-        res.status(200).json({users: data})
+        const token = req.cookies.login;
+        if (!token){
+            return res.status(401).json({ success: false, message: 'Not Logged in' })
+        }
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+        const user = await Login.find({ email: decoded.email })
+        if(!user){
+            return res.status(404).json({ success: false, message: 'Unauthorized' })
+        }
+        res.status(200).json({ success: true, user})
     } catch (error) {
         console.log(error)
-        return res.status(500).json({ message: `Something went wrong: ${error}` })
+        return res.status(401).json({ success: false, message: `Invalid or expired token` })
     }
 }
 

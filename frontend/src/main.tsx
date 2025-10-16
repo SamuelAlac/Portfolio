@@ -14,6 +14,7 @@ import BlogPage from './pages/blogpage/BlogPage.tsx'
 import { GoogleOAuthProvider } from '@react-oauth/google'
 import { Provider } from 'react-redux'
 import { store } from './store/store.ts'
+import LoginPage from './pages/loginpage/LoginPage.tsx'
 
 const client = new QueryClient();
 const router = createBrowserRouter([
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: '/Chatbot',
         element: <ChatbotPage/>
+      },
+      {
+        path: '/Login',
+        element: <LoginPage/>
       }
     ]
   }
