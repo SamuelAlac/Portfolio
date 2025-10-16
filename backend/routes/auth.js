@@ -10,7 +10,7 @@ router.post('/secret', loginUser)
 router.get('/authenticated', authenticatedUser , getAuthenticatedUser)
 
 // LOGOUT USER to /api/auth/google/logout
-router.get('/logout', logoutUser)
+router.post('/logout', logoutUser)
 
 // CHECK USER LOGIN STATUS from /api/auth/google/status
 router.get('/status', authenticatedUser, checkLoginStatus)

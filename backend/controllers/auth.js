@@ -9,24 +9,28 @@ const Login = require('../schema/login.js');
 // @route   POST api/auth/google/secret
 exports.loginUser = async (req, res) =>{
     const client = new OAuth2Client(process.env.OAUTH_CLIENT_ID);
-    const authID = req.body.authID;
+    const { authID, passcode } = req.body;
     try {
         const ticket = await client.verifyIdToken({
             idToken: authID,
             audience: process.env.OAUTH_CLIENT_ID,
         })
+
+        if(passcode !== process.env.ADMIN_SECRET){
+            return res.status(403).json({ success: false, message: 'Access Denied: invalid passcode' })
+        }
         
         const { name, email, picture } = ticket.getPayload()
         const loginToken = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: '1h' })
 
-        await Login.findOneAndUpdate({ email }, { name, picture }, { new: true, upsert: true })
+        await Login.findOneAndUpdate({ email }, { email, name, picture }, { new: true, upsert: true })
 
         res.status(200)
-        .cookie('login', loginToken, { httpOnly: true, sameSite: 'lax', secure: process.env.NODE_ENV === 'production', maxAge: 60 * 60 * 1000 })
+        .cookie('login', loginToken, { httpOnly: true, sameSite: 'lax', secure: process.env.NODE_ENV === 'production', path: '/', maxAge: 60 * 60 * 1000 })
         .json({ message: 'Sucessfully logged in', success: true, user: { name, email, picture } })
     } catch (error) {
         console.log(error)
-        return res.status(500).json({ message: `Something went wrong: ${error}` })
+        return res.status(500).json({ success: false,  message: `Something went wrong: ${error}` })
     }
 }
 
@@ -34,17 +38,11 @@ exports.loginUser = async (req, res) =>{
 // @route   GET api/auth/google/authenticated
 exports.getAuthenticatedUser = async (req, res) =>{
     try {
-        const token = req.cookies.login;
-        if (!token){
-            return res.status(401).json({ success: false, message: 'Not Logged in' })
-        }
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-        const user = await Login.find({ email: decoded.email })
-        if(!user){
-            return res.status(404).json({ success: false, message: 'Unauthorized' })
+        if(!req.user){
+            return res.status(404).json({ success: false, message: 'Not logged in' })
         }
-        res.status(200).json({ success: true, user})
+        res.status(200).json({ success: true, user: req.user})
     } catch (error) {
         console.log(error)
         return res.status(401).json({ success: false, message: `Invalid or expired token` })
@@ -55,7 +53,7 @@ exports.getAuthenticatedUser = async (req, res) =>{
 // @route   POST api/auth/google/logout
 exports.logoutUser = async (req, res) =>{
     try {
-        res.clearCookie('login').json({ message: 'Successfully logged out', success: true })
+        res.clearCookie('login', { httpOnly: true, sameSite: 'lax', secure: process.env.NODE_ENV === 'production', path: '/' }).json({ message: 'Successfully logged out', success: true })
     } catch (error) {
         console.log(error)
         return res.status(500).json({ message: `Something went wrong: ${error}` }) 

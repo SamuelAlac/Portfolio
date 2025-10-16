@@ -8,9 +8,9 @@ const authenticatedUser = async (req, res, next) =>{
       return res.status(401).json({ message: "No token provided" });
     }
     try {
-        const decodedMessage = jwt.verify(idToken, secretKey.web);
+        const decoded = jwt.verify(idToken, process.env.JWT_SECRET);
         const user = await Login.findOne({
-            email: decodedMessage
+            email: decoded.email
         });
         if (!user) {
             return res.status(401).json({ message: "User not found" });
@@ -19,7 +19,7 @@ const authenticatedUser = async (req, res, next) =>{
         next();
     } catch (error) {
         console.log(error)
-        return res.status(500).json({ message: `Something went wrong: ${error}` })
+        return res.status(401).json({ message: `Invalid or expired token: ${error}` })
     }
 }
 

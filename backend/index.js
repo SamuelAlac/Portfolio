@@ -22,15 +22,15 @@ app.use(express.urlencoded({extended: true}))
 
 app.use(logger)
 
-mongoose.connect(process.env.MONGO_DB_URI)
-.then(() => console.log('Connected to MongoDB'))
-.catch(err => console.error(`Connection error: ${err}`))
-
 app.use('/api/github', githubRoutes)
 
 app.use('/api/ai', aiRoutes)
 
 app.use('/api/auth/google', authRoutes)
+
+mongoose.connect(process.env.MONGO_DB_URI)
+.then(() => console.log('Connected to MongoDB'))
+.catch(err => console.error(`Connection error: ${err}`))
 
 app.listen(PORT, () =>{
     console.log(`Server running on localhost:`+PORT)
