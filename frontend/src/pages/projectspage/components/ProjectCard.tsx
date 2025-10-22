@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 
 export const ProjectCard = ({ project }: { project: any }) => {
   return (
-        <section className="w-full h-full text-center relative group">
+        <section className="w-full h-full text-center relative group pb-3">
             <img src={project.image} alt="" className="w-full h-45" />
             <h1 className="font-bold">{project.name}</h1>
             <h3 className="text-neutral-500">{project.startDate}</h3>
