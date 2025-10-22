@@ -2,7 +2,8 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { MainLayout } from './layouts/MainLayout.tsx'
+import { lazy, Suspense } from 'react'
+const MainLayout = lazy(() => import('@/layouts/MainLayout.tsx').then(module => { return { default: module.MainLayout }}))
 import HomePage from './pages/homepage/HomePage.tsx'
 import AboutPage from './pages/aboutpage/AboutPage.tsx'
 import AchievementsPage from './pages/achievementspage/AchievementsPage.tsx'
@@ -15,12 +16,17 @@ import { GoogleOAuthProvider } from '@react-oauth/google'
 import { Provider } from 'react-redux'
 import { store } from './store/store.ts'
 import LoginPage from './pages/loginpage/LoginPage.tsx'
+import { Loading } from './pages/loading.tsx'
 
 const client = new QueryClient();
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <MainLayout/>,
+    element: (
+      <Suspense fallback={<Loading/>}>
+        <MainLayout/>
+      </Suspense>
+    ),
     children: [
       {
         index: true,
@@ -65,7 +71,9 @@ createRoot(document.getElementById('root')!).render(
     <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
       <Provider store={store}>
       <QueryClientProvider client={client}>
-        <RouterProvider router={router} />
+        <Suspense fallback={<div>Initializing app...</div>}>
+          <RouterProvider router={router} />
+        </Suspense>
       </QueryClientProvider>
       </Provider>
     </GoogleOAuthProvider>
