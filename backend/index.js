@@ -11,7 +11,14 @@ const { default: mongoose } = require('mongoose');
 const authRoutes = require('./routes/auth');
 const PORT = process.env.PORT;
 app.use(cors({
-    origin: ['http://localhost:5173', 'https://samuel-portfolio-three-gamma.vercel.app'],
+    origin: (origin, callback) => {
+        const allowed = ['http://localhost:5173', 'https://samuel-portfolio-three-gamma.vercel.app'];
+        if (!origin || allowed.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true,
 }));
 
