@@ -1,8 +1,8 @@
-import { Skills } from "./components/Skills"
+import { CareerStats } from "./components/CareerStats"
 import { ContactMe } from "./components/ContactMe"
 import { Specialization } from "./components/Specialization"
 import { Hero } from "./components/Hero"
-import { CareerStats } from "./components/CareerStats"
+import { TechnicalSkills } from "./components/TechnicalSkills"
 import Seo from "@/Seo"
 
 const HomePage = () => {
@@ -12,11 +12,11 @@ const HomePage = () => {
       <div className="space-y-5 flex flex-col lg:flex-row md:space-y-0">
         <div className="md:flex-grow space-y-5">
           <Hero/>
-          <CareerStats/>
+          <TechnicalSkills/>
         </div>
 
         <div className="space-y-5 lg:ms-5 md:mt-5 lg:mt-0">
-          <Skills/>
+          <CareerStats/>
           <Specialization/>
           <ContactMe/>
         </div>

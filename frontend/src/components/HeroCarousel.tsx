@@ -6,8 +6,8 @@ export const HeroCarousel = () => {
     <CarouselItem className="p-0">
         <div>
         <Card className="p-0">
-            <CardContent className="p-0 h-90 flex items-center justify-center">
-            <img src="/placeholder_image.webp" className="h-90 w-full" alt="" />
+            <CardContent className="p-0 md:h-100 flex items-center justify-center">
+            <img src="/featured1.webp" className="md:h-100 w-full opacity-40" alt="" />
             </CardContent>
         </Card>
         </div>

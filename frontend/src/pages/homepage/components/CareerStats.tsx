@@ -1,45 +1,48 @@
-import { SkillsBadge } from "@/components/SkillsBadge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { artificialintelligenceskills, backendskills, frontendskills, testings, tools } from "@/lib/constants/skills"
+import { GrCertificate } from "react-icons/gr";
+import { IoTimeOutline, IoFolderOutline } from "react-icons/io5";
+import { FaCode } from "react-icons/fa6";
 
 export const CareerStats = () => {
   return (
-    <section className="w-full min-h-70">
-        <div className="space-y-5">
-          <Tabs defaultValue="Frontend" className="w-full">
-            <TabsList>
-              <TabsTrigger className="text-[10px] md:text-sm" value="Frontend">Frontend</TabsTrigger>
-              <TabsTrigger className="text-[10px] md:text-sm" value="Backend">Backend</TabsTrigger>
-              <TabsTrigger className="text-[10px] md:text-sm" value="AI">AI / ML</TabsTrigger>
-              <TabsTrigger className="text-[10px] md:text-sm" value="Testing">Testing</TabsTrigger>
-              <TabsTrigger className="text-[10px] md:text-sm" value="Tools">Tools</TabsTrigger>
-            </TabsList>
-            <TabsContent className="ps-0.5 md:ps-2.5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-5 gap-2 md:gap-5" value="Frontend">
-              {frontendskills.map((skill, index) =>(
-                  <SkillsBadge skill={skill} key={index}/>
-              ))}
-            </TabsContent>
-            <TabsContent className="ps-0.5 md:ps-2.5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-5 gap-2 md:gap-5" value="Backend">
-              {backendskills.map((skill, index) =>(
-                  <SkillsBadge skill={skill} key={index}/>
-              ))}
-            </TabsContent>
-            <TabsContent className="ps-0.5 md:ps-2.5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-5 gap-2 md:gap-5" value="AI">
-              {artificialintelligenceskills.map((skill, index) =>(
-                  <SkillsBadge skill={skill} key={index}/>
-              ))}
-            </TabsContent>
-            <TabsContent className="ps-0.5 md:ps-2.5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-5 gap-2 md:gap-5" value="Testing">
-              {testings.map((skill, index) =>(
-                  <SkillsBadge skill={skill} key={index}/>
-              ))}
-            </TabsContent>
-            <TabsContent className="ps-0.5 md:ps-2.5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-5 gap-2 md:gap-5" value="Tools">
-              {tools.map((skill, index) =>(
-                  <SkillsBadge skill={skill} key={index}/>
-              ))}
-            </TabsContent>
-          </Tabs>
+    <section className="w-sm min-h-60">
+        <div className="flex flex-col gap-3">
+          <h1 className="ps-3 pt-3 text-3xl">Career Stats</h1>
+          <div className="h-40 grid grid-cols-2 gap-4 p-2">
+            <div className="h-17 bg-secondary flex justify-evenly items-center rounded-xl">
+                <GrCertificate className="text-6xl"/>
+                <div className="flex flex-col items-center">
+                  <h3 className="font-semibold">Certificates</h3>
+                  <p className="text-4xl font-semibold">7</p>
+                </div>
+            </div>
+
+            <div className="h-17 bg-secondary flex justify-evenly items-center rounded-xl">
+                <IoTimeOutline className="text-6xl"/>
+                <div className="flex flex-col items-center">
+                  <h3 className="font-semibold">Experiences</h3>
+                  <div className="flex items-center">
+                    <p className="text-4xl font-semibold">11</p>
+                    <span className="font-semibold">mos</span>
+                  </div>
+                </div>
+            </div>
+
+            <div className="h-17 bg-secondary flex justify-evenly items-center rounded-xl">
+                <IoFolderOutline className="text-6xl"/>
+                <div className="flex flex-col items-center">
+                  <h3 className="font-semibold">Projects</h3>
+                  <p className="text-4xl font-semibold">5</p>
+                </div>
+            </div>
+
+            <div className="h-17 bg-secondary flex justify-evenly items-center rounded-xl">
+                <FaCode className="text-6xl"/>
+                <div className="flex flex-col items-center">
+                  <h3 className="font-semibold">Languages</h3>
+                  <p className="text-4xl font-semibold">7</p>
+                </div>
+            </div>
+          </div>
         </div>
     </section>
   )

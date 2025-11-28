@@ -7,12 +7,12 @@ import { ReactTyped } from 'react-typed'
 export const Hero = () => {
 
   const plugin = useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
+    Autoplay({ delay: 7000, stopOnInteraction: true })
   )
 
   return (
-    <section className="w-full min-h-90 relative">
-          <Carousel className="z-0" opts={{ loop: true }} plugins={[plugin.current]} 
+    <section className="w-full md:h-100 relative">
+          <Carousel opts={{ loop: true }} plugins={[plugin.current]} 
           onMouseEnter={() => plugin.current.stop} onMouseLeave={() => plugin.current.play}>
             <CarouselContent className="-ml-0">
               {Array.from({ length: 5 }).map((_, index) => (
