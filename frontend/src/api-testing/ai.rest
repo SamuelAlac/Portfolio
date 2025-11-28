@@ -1,9 +1,9 @@
 
 ### GET CHAT HISTORY
-GET http://localhost:8000/api/ai/history/
+GET http://portfolio-zi91.onrender.com/api/ai/history/
 
 ### POST CHAT MESSAGE
-POST http://localhost:8000/api/ai/message/
+POST http://portfolio-zi91.onrender.com/api/ai/message/
 Content-Type: application/json
 
 {
@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 ### POST PAGE BLOG
-POST http://localhost:8000/api/ai/blog/
+POST http://portfolio-zi91.onrender.com/api/ai/blog/
 Content-Type: application/json
 
 {
@@ -19,4 +19,4 @@ Content-Type: application/json
 }
 
 ### GET PAGE BLOG
-GET http://localhost:8000/api/ai/blog/
+GET http://portfolio-zi91.onrender.com/api/ai/blog/

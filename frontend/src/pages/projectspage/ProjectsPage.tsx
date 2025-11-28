@@ -5,7 +5,7 @@ import { useAuthUser } from "@/features/auth/hooks"
 
 const ProjectsPage = () => {
 
-  const { data, isLoading, isError } = useAuthUser()
+  const { data } = useAuthUser()
   const user = data
   console.log(user)
   return (

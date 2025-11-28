@@ -1,9 +1,9 @@
 
 ### GET ALL REPOSITORY
-GET http://localhost:8000/api/github/repository/
+GET http://portfolio-zi91.onrender.com/api/github/repository/
 
 ### GET REPOSITORY
-GET http://localhost:8000/api/github/repository/BSIT-2DG2-EnrollmentSystem/
+GET http://portfolio-zi91.onrender.com/api/github/repository/BSIT-2DG2-EnrollmentSystem/
 
 ### GET CONTRIBUTIONS
-GET http://localhost:8000/api/github/contributions/
+GET http://portfolio-zi91.onrender.com/api/github/contributions/

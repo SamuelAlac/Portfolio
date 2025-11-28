@@ -2,7 +2,7 @@ import { loginUser } from "@/features/auth/api";
 import { loggedIn, loginFailed } from "@/features/auth/authSlice";
 import { useLogout } from "@/features/auth/hooks";
 import { GoogleLogin } from "@react-oauth/google"
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux"
 
 const LoginPage = () => {

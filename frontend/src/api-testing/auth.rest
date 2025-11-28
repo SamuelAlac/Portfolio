@@ -1,2 +1,2 @@
 ### GET AUTHENTICATED USER
-GET http://localhost:8000/api/auth/google/authenticated
+GET http://portfolio-zi91.onrender.com/api/auth/google/authenticated

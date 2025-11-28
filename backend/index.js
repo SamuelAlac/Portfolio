@@ -11,8 +11,8 @@ const { default: mongoose } = require('mongoose');
 const authRoutes = require('./routes/auth');
 const PORT = process.env.PORT;
 app.use(cors({
-    origin: ['http://localhost:5173'],
-    credentials: true,
+    origin: 'http://localhost:5173',
+    credentials: true
 }));
 
 app.use(cookieParser())

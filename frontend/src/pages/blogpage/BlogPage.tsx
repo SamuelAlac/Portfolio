@@ -1,5 +1,3 @@
-import { ReadMeViewer } from "@/components/ReadMeViewer"
-
 const BlogPage = () => {
 
   return (

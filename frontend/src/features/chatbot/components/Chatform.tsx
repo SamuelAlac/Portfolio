@@ -7,7 +7,7 @@ type FormFields = {
 
 export const Chatform = () => {
   const { mutateAsync } = usePostChatMessage();
-  const { register, handleSubmit, reset, formState: { errors, isSubmitting }} = useForm<FormFields>()
+  const { register, handleSubmit, reset, formState: { isSubmitting }} = useForm<FormFields>()
   const onSubmit: SubmitHandler<FormFields> = async (formData) =>{
     try {
       const input = formData.input;

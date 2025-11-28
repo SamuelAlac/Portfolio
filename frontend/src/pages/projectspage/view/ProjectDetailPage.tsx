@@ -6,7 +6,7 @@ const ProjectDetailPage = () => {
   const { repo } = useParams();
   if(!repo) throw new Error('repo is missing');
   console.log(repo)
-  const { data: project, isError, isLoading } = useProject({repo})
+  const { data: project, isLoading } = useProject({repo})
 
   if(isLoading){
     return (

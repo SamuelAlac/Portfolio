@@ -1,5 +1,4 @@
 import { specializations } from "@/lib/constants/specializations";
-import { FaCode } from "react-icons/fa";
 
 export const Specialization = () => {
   return (

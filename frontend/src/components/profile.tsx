@@ -1,6 +1,5 @@
 import { Download } from "lucide-react"
 import { Button } from "./ui/button"
-import { ModeToggle } from "./mode-toggle"
 
 export const Profile = () => {
   return (

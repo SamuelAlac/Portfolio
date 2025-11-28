@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import { Button } from "./ui/button"
 
 export const AchievementCard = ({ achievement }: { achievement: any }) => {
   return (
