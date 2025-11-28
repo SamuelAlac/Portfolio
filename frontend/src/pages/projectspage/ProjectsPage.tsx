@@ -1,6 +1,5 @@
 import { projects } from "@/lib/constants/projects"
 import { ProjectCard } from "./components/ProjectCard"
-import { useSelector } from "react-redux"
 import { useAuthUser } from "@/features/auth/hooks"
 
 

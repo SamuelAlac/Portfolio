@@ -1,7 +1,4 @@
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Dialog, DialogTrigger, DialogContent, DialogHeader,
-DialogTitle, DialogFooter, DialogDescription, DialogClose } from '@/components/ui/dialog'
 import { Link } from "react-router-dom"
 
 export const ProjectCard = ({ project }: { project: any }) => {
@@ -18,36 +15,10 @@ export const ProjectCard = ({ project }: { project: any }) => {
                 </Badge>
                 ))}
             </div>
-            <Dialog>
-                <DialogTrigger asChild>
                 <Link to={`/Projects/${project.repo}`} className="p-1.5 rounded-4xl absolute top-33 left-3 w-30 text-white bg-neutral-600 hover:bg-neutral-950
                 md:opacity-0 md:group-hover:opacity-100">
                     Show Preview
                 </Link>
-                </DialogTrigger>
-                <EnrollmentSystemDialog/>
-            </Dialog>
         </section>
-  )
-}
-
-const EnrollmentSystemDialog = () => {
-  return (
-    <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
-            <DialogTitle>Enrollment System Preview</DialogTitle>
-            <DialogDescription>
-              Make changes to your profile here. Click save when you&apos;re
-              done.
-            </DialogDescription>
-        </DialogHeader>
-
-        <DialogFooter>
-        <DialogClose asChild>
-            <Button variant="outline">Cancel</Button>
-        </DialogClose>
-            <Button type="submit">Save changes</Button>
-        </DialogFooter>
-    </DialogContent>
   )
 }

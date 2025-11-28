@@ -29,9 +29,13 @@ app.use('/api/ai', aiRoutes)
 app.use('/api/auth/google', authRoutes)
 
 mongoose.connect(process.env.MONGO_DB_URI, { dbName: 'portfolio_db' })
-.then(() => console.log('Connected to MongoDB'))
-.catch(err => console.error(`Connection error: ${err}`))
+  .then(() => {
+    console.log('Connected to MongoDB');
 
-app.listen(PORT, () =>{
-    console.log(`Server running on localhost:`+PORT)
-})
+    app.listen(PORT, () => {
+      console.log(`Server running on localhost:${PORT}`);
+    });
+  })
+  .catch(err => {
+    console.error(`Connection error: ${err}`);
+  });

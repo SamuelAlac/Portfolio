@@ -1,5 +1,5 @@
-import { loginUser, logoutUser } from "@/features/auth/api";
-import { loggedIn, loginFailed, logout } from "@/features/auth/authSlice";
+import { loginUser } from "@/features/auth/api";
+import { loggedIn, loginFailed } from "@/features/auth/authSlice";
 import { useLogout } from "@/features/auth/hooks";
 import { GoogleLogin } from "@react-oauth/google"
 import { useEffect, useState } from "react";
@@ -20,6 +20,7 @@ const LoginPage = () => {
                 dispatch(loggedIn({ user: res?.user }))
             }else{
                 alert(res.message);
+                console.log('login failed')
                 dispatch(loginFailed());
             }
         } catch (error) {

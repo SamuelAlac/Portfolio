@@ -19,7 +19,7 @@ export const Experiences = () => {
             <h1 className="text-md font-semibold">CAPSTONE PROJECT - BULACAN STATE UNIVERSITY</h1>
             <div className="md:flex justify-between">
               <p>Full-Stack Developer</p>
-              <p className="text-neutral-500">Jan 2024 - Oct 2025</p>
+              <p className="text-neutral-500">Jan 2024 - Nov 2025</p>
             </div>
             <ul className="md:ps-3.5 md:list-disc space-y-1.5 text-neutral-300">
               <li>
