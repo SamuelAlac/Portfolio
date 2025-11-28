@@ -5,6 +5,8 @@ import path from 'path'
 import {createHtmlPlugin } from 'vite-plugin-html'
 import viteSitemap from 'vite-plugin-sitemap'
 
+const SITE_URL = process.env.VITE_SITE_URL || 'http://localhost:5173';
+
 const routes = [
   { path: '/', name: 'Home' },
   { path: '/About', name: 'About' },
@@ -31,7 +33,7 @@ export default defineConfig({
       },
     }),
     viteSitemap({
-      hostname: '',
+      hostname: SITE_URL,
       exclude: ['/private'],
       generateRobotsTxt: true,
       dynamicRoutes: routes.map(route => route.path),
