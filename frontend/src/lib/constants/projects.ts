@@ -2,7 +2,7 @@ export const projects = [
     {
         repo: 'Enrollment-System',
         name: 'Enrollment System',
-        image: '/StudentEnrollment.png',
+        image: '/projects/StudentEnrollment.png',
         startDate: '2024',
         description: 'This is our project during 2nd year on Object-Oriented Programming (OOP) in Java, with database management using what we learned in Advanced Database Systems (ADS) which is MySQL and Microsoft SQL Server.',
         materials: [
@@ -14,7 +14,7 @@ export const projects = [
     {
         repo: 'PocketExpress',
         name: 'Pocket Express',
-        image: '/PocketExpress.png',
+        image: '/projects/PocketExpress.png',
         startDate: '2024',
         description: 'This is our project on Mobile Application Development (MAD) during 3rd Year where we used Java and SQLite.',
         materials: [
@@ -25,7 +25,7 @@ export const projects = [
     {
         repo: 'GuideBot',
         name: 'Guide Bot',
-        image: '/GuideBot.png',
+        image: '/projects/GuideBot.png',
         startDate: '2025',
         description: 'This is my personal project where I built a Discord bot using Discord.js and integrated Google Gemin with LangChain. I created it to challenge myself and explore how large language models can enhance a chatbot experience.',
         materials: [
@@ -37,10 +37,12 @@ export const projects = [
         ],
     },
     {
+        repo: 'GuideBot',
         name: 'SDPT Academy',
-        image: '/SDPTAcademy.png',
+        image: '/projects/SDPTAcademy.png',
         startDate: '2025',
-        description: 'This is our Capstone Project, an AI-powered E-learning platform with Generative AI for personalized learning and content creation, improving student engagement. It is built with Next.js and integrated OpenAI with LangChain for Chatbot.',
+        description: 'This is our Capstone Project, an AI-powered E-learning platform with Generative AI for personalized learning and content creation, improving student engagement. It is built with Next.js and firebase and integrated OpenAI with LangChain for Chatbot.',
+
         materials: [
             { name: 'Typescript', img: '/skills/frontend/typescript.svg' },
             { name: 'Next.js', img: '/skills/frontend/nextjs.svg' },
@@ -50,5 +52,21 @@ export const projects = [
             { name: 'LangChain', img: '/skills/ai/langchain.svg' },
             { name: 'Firebase', img: '/skills/backend/firebase.svg' },
         ],
-    }
+    },
+    {
+        repo: 'Custom-Survey-and-Analytics-Platform',
+        name: 'Survey Corps',
+        image: '/projects/SurveyCorps.png',
+        startDate: '2025',
+        description: 'This is our project on Web Systems and Technologies (WST), where we used React for frontend and Django for Backend, This project is a custom survey and analytics builder. We created a drag-and-drop interface for building survey and real time analytics with charts.',
+        materials: [
+            { name: 'Typescript', img: '/skills/frontend/typescript.svg' },
+            { name: 'Next.js', img: '/skills/frontend/nextjs.svg' },
+            { name: 'Tanstack', img: '/skills/frontend/tanstack.svg' },
+            { name: 'Bootstrap', img: '/skills/frontend/bootstrap.svg' },
+            { name: 'OpenAI', img: '/skills/ai/openai.svg' },
+            { name: 'LangChain', img: '/skills/ai/langchain.svg' },
+            { name: 'Firebase', img: '/skills/backend/firebase.svg' },
+        ],
+    },
 ]

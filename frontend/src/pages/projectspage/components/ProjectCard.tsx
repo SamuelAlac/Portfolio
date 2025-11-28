@@ -7,7 +7,7 @@ export const ProjectCard = ({ project }: { project: any }) => {
             <img src={project.image} alt="" className="w-full h-45" />
             <h1 className="font-bold">{project.name}</h1>
             <h3 className="text-neutral-500">{project.startDate}</h3>
-            <p className="px-3 pt-3 h-35 text-sm text-justify">{project.description}</p>
+            <p className="px-3 pt-3 h-40 text-sm text-justify">{project.description}</p>
             <div className="px-3 grid grid-cols-4 lg:grid-cols-4 xl:grid-cols-6 w-full justify-items-center gap-2">
                 {project.materials.map((material: any, index: number) =>(
                     <Badge key={index} variant="secondary" className="col">
