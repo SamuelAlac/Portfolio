@@ -7,7 +7,7 @@ import { Nav } from "@/components/Nav"
 
 export const MainLayout = () => {
   return (
-    <div className="flex flex-col min-h-screen min-w-full">
+    <div className="flex flex-col min-h-screen min-w-full bg-linear-90 from-[#04071D] to-[#0C0E23] text-white">
       <ThemeProvider>
         <SidebarProvider>
           <AppSidebar/>
