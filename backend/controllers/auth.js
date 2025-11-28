@@ -1,7 +1,6 @@
 require('dotenv').config();
 const { OAuth2Client } = require("google-auth-library")
 const jwt = require('jsonwebtoken')
-const secretKey = require('../secret.json')
 const Login = require('../schema/login.js');
 
 
