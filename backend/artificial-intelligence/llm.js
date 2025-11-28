@@ -25,49 +25,9 @@ const prompt = ChatPromptTemplate.fromTemplate(`
     Question: {input}
 `);
 
-const blogMakerPrompt = ChatPromptTemplate.fromTemplate(`
-    You are **Altera**, an AI Assistant that creates high-quality blog posts.
-
-    ## Guidelines:
-    - Audience: students and educators
-    - Topic: {topic}
-    - Target Length: 1000 words
-    - Style/Tone: professional but friendly
-
-    ## Requirements:
-    1. Generate an engaging **Title**.
-    2. Write an **Introduction** that hooks the reader.
-    3. Organize the **Main Content** with H2/H3 subheadings.
-    4. Add examples, insights, or actionable tips where relevant.
-    5. End with a clear **Conclusion** (and optional Call-to-Action).
-    6. Ensure the post is plagiarism-free, factually accurate, and SEO-friendly.
-
-    ## Output Format:
-    - Title
-    - Introduction
-    - Body (with subheadings)
-    - Conclusion
-    - Call-to-Action (optional)
-
-    History: {history}
-`)
-
-const upstashChatHistory = new UpstashRedisChatMessageHistory({
-    sessionId: 'session123',
-    config: {
-        url: process.env.UPSTASH_REDIS_REST_URL,
-        token: process.env.UPSTASH_REDIS_REST_TOKEN,
-    }
-});
-
-const blogMemory = new BufferMemory({
-    memoryKey: 'history',
-    chatHistory: upstashChatHistory,
-});
-
 const memory = new BufferMemory({
     memoryKey: 'history',
     returnMessages: true,
 });
 
-module.exports = { llm, prompt, blogMakerPrompt, memory, blogMemory };
+module.exports = { llm, prompt, memory };

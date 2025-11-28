@@ -3,7 +3,6 @@ const { TextLoader } = require('langchain/document_loaders/fs/text')
 const { RecursiveCharacterTextSplitter } = require('langchain/text_splitter')
 const { CohereEmbeddings } = require('@langchain/cohere')
 const { FaissStore } = require('@langchain/community/vectorstores/faiss')
-const fs = require("fs");
 const path = require("path");
 
 
