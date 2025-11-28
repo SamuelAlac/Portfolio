@@ -1,11 +1,10 @@
+import { ReactTyped } from "react-typed"
+
 export const Loading = () => {
   return (
     <div className="flex items-center justify-center h-screen bg-white">
-      <img
-        src="/vite.svg"
-        className="w-16 h-16 animate-spin"
-        alt="Loading..."
-      />
+      <h1 className="text-4xl font-bold">{'<'}<ReactTyped strings={['Samuel']}
+      typeSpeed={120} loop backSpeed={20} cursorChar="|" showCursor={true} />{'/>'}</h1>
     </div>
   )
 }

@@ -3,7 +3,8 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { lazy, Suspense } from 'react'
-const MainLayout = lazy(() => import('@/layouts/MainLayout.tsx').then(module => { return { default: module.MainLayout }}))
+const MainLayout = lazy(() => new Promise<{ default: React.ComponentType<any> }>((resolve) => {
+setTimeout(() => {import('@/layouts/MainLayout.tsx').then((module) => { resolve({ default: module.MainLayout }) })}, 1500)}));
 import HomePage from './pages/homepage/HomePage.tsx'
 import AboutPage from './pages/aboutpage/AboutPage.tsx'
 import AchievementsPage from './pages/achievementspage/AchievementsPage.tsx'
@@ -16,7 +17,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google'
 import { Provider } from 'react-redux'
 import { store } from './store/store.ts'
 import LoginPage from './pages/loginpage/LoginPage.tsx'
-import { Loading } from './pages/loading.tsx'
+import { Loading } from './pages/Loading.tsx'
 
 const client = new QueryClient();
 const router = createBrowserRouter([
