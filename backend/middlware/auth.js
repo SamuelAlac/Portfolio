@@ -1,5 +1,4 @@
 const jwt = require("jsonwebtoken");
-const secretKey = require("../secret.json");
 const Login = require("../schema/login.js");
 
 const authenticatedUser = async (req, res, next) =>{
