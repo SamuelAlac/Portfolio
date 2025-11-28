@@ -33,7 +33,7 @@ export default defineConfig({
       },
     }),
     viteSitemap({
-      hostname: SITE_URL,
+      hostname: 'https://samuel-portfolio-three-gamma.vercel.app',
       exclude: ['/private'],
       generateRobotsTxt: true,
       dynamicRoutes: routes.map(route => route.path),
