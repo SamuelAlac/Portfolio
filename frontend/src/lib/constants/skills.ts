@@ -23,3 +23,52 @@ export const backend = [
     { language: 'Firebase', image: '/skills/backend/firebase.svg' },
     { language: 'MongoDB', image: '/skills/backend/mongodb.svg' },
 ]
+
+export const frontendskills = [
+    { name: 'HTML5', icon: '/frontend_skills/html5.svg',},
+    { name: 'CSS3', icon: '/frontend_skills/css3.svg', },
+    { name: 'JavaScript', icon: '/frontend_skills/javascript.svg', },
+    { name: 'TypeScript', icon: '/frontend_skills/typescript.svg', },
+    { name: 'React.js', icon: '/frontend_skills/react.svg', },
+    { name: 'Vite', icon: '/frontend_skills/vite.svg', },
+    { name: 'Next.js', icon: '/frontend_skills/nextjs.svg', },
+    { name: 'Bootstrap', icon: '/frontend_skills/bootstrap.svg', },
+    { name: 'TailwindCSS', icon: '/frontend_skills/tailwindcss.svg', },
+    { name: 'DaisyUI', icon: '/frontend_skills/daisyUI.svg', },
+    { name: 'Shadcn', icon: '/frontend_skills/shadcn.svg', },
+]
+
+export const backendskills = [
+    { name: 'C++', icon: '/backend_skills/cplusplus.svg',},
+    { name: 'C#', icon: '/backend_skills/csharp.svg',},
+    { name: 'Java', icon: '/backend_skills/java.svg',},
+    { name: 'Node.js', icon: '/backend_skills/nodejs.svg',},
+    { name: 'Express.js', icon: '/backend_skills/express.svg',},
+    { name: 'Python', icon: '/backend_skills/python.svg',},
+    { name: 'Django', icon: '/backend_skills/django.svg',},
+    { name: 'Firebase', icon: '/backend_skills/firebase.svg',},
+    { name: 'MySQL', icon: '/backend_skills/mysql.svg',},
+    { name: 'MSSQL', icon: '/backend_skills/microsoftsqlserver.svg',},
+    { name: 'SQLite', icon: '/backend_skills/sqlite.svg',},
+    { name: 'PostgreSQL', icon: '/backend_skills/postgresql.svg',},
+]
+
+export const artificialintelligenceskills = [
+    { name: 'Gemini', icon: '/artificial_intelligence/gemini.svg',},
+    { name: 'OpenAI', icon: '/artificial_intelligence/openai.svg',},
+    { name: 'LangChain', icon: '/artificial_intelligence/langchain.svg',},
+]
+
+export const testings = [
+    { name: 'Postman', icon: '/testings/postman.svg',},
+    { name: 'Rest Client', icon: '/testings/restclient.svg',},
+    { name: 'Selenium', icon: '/testings/selenium.svg',},
+]
+
+export const tools = [
+    { name: 'Git', icon: '/tools/git.svg',},
+    { name: 'GitHub', icon: '/tools/github.svg',},
+    { name: 'Figma', icon: '/tools/figma.svg',},
+    { name: 'VS Code', icon: '/tools/vscode.svg',},
+    { name: 'Android Studio', icon: '/tools/androidstudio.svg',},
+]
