@@ -11,7 +11,7 @@ const { default: mongoose } = require('mongoose');
 const authRoutes = require('./routes/auth');
 const PORT = process.env.PORT;
 app.use(cors({
-    origin: ['http://localhost:5173', 'https://samuel-portfolio-ca2rlto9v-samuel-vincent-alacs-projects.vercel.app'],
+    origin: ['http://localhost:5173', 'https://samuel-portfolio-three-gamma.vercel.app/'],
     credentials: true,
 }));
 
