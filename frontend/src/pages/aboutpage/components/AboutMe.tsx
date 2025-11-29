@@ -17,9 +17,9 @@ function CodeBlockDemo({ code, language }: { code: any, language: any }) {
  
 const aboutMeCode = 
 `
-//Who is Samuel Vincent Alac
+// Information about Samuel
 const aboutMe = {
-  name: 'Samuel Vincent Alac',
+  name: 'Samuel Vincent R. Alac',
   age: 22,
   description: 'Focused on developing scalable apps and learning new technologies.',
   interest: ['Web Development', 'Mobile Development', 'UI/IX Design'],
