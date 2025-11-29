@@ -4,10 +4,10 @@ import { FaCode } from "react-icons/fa6";
 
 export const CareerStats = () => {
   return (
-    <section className="w-sm min-h-60">
-        <div className="flex flex-col gap-3">
+    <section className="md:w-sm min-h-60">
+        <div className="flex flex-col items-center md:items-start gap-3">
           <h1 className="ps-3 pt-3 text-3xl">Career Stats</h1>
-          <div className="h-40 grid grid-cols-2 gap-4 p-2">
+          <div className="h-40 min-h-fit w-fit grid grid-cols-1 md:grid-cols-2 gap-4 p-2">
             <div className="h-17 flex justify-evenly items-center rounded-2xl bg-white/5 shadow-[-1px_1px_5px_#CBACF9] 
             p-5 transition ease-in-out hover:scale-102 hover:shadow-[-1px_1px_10px_#CBACF9]">
                 <GrCertificate className="text-6xl text-[#CBACF9]"/>
