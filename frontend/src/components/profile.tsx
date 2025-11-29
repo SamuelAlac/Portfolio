@@ -11,7 +11,7 @@ export const Profile = () => {
         <h1 className="text-lg">Samuel Vincent Alac</h1>
         <h2 className="text-sm">Aspiring Software Engineer</h2>
         <a href="/Alac_Resume.pdf" target="_blank">
-        <Button size='sm' className="w-40 bg-white/10">
+        <Button size='sm' className="w-40 bg-white/10 hover:bg-white/20">
             <Download /> Resume
         </Button>
         </a>

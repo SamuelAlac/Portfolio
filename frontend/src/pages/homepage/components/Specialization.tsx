@@ -8,7 +8,7 @@ export const Specialization = () => {
           {specializations.map((specialization, index) =>(
             <figure key={index} className="flex items-center gap-3">
               <img src={specialization.logo} alt="" className="h-10" />
-              <h1 className="text-lg">{specialization.service}</h1>
+              <h1 className="text-lg text-[#CBACF9]">{specialization.service}</h1>
             </figure>
           ))}
         </div>
