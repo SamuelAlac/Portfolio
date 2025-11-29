@@ -1,33 +1,5 @@
-import { CodeBlock } from 'react-code-block';
-
-function CodeBlockDemo({ code, language }: { code: any, language: any }) {
-  return (
-    <CodeBlock code={code} language={language}>
-      <CodeBlock.Code className="bg-gray-900 p-6 rounded-xl shadow-lg">
-        <div className="table-row">
-          <CodeBlock.LineNumber className="table-cell pr-4 text-sm text-gray-500 text-right select-none" />
-          <CodeBlock.LineContent className="table-cell">
-            <CodeBlock.Token />
-          </CodeBlock.LineContent>
-        </div>
-      </CodeBlock.Code>
-    </CodeBlock>
-  );
-}
- 
-const aboutMeCode = 
-`
-// Information about Samuel
-const aboutMe = {
-  name: 'Samuel Vincent R. Alac',
-  age: 22,
-  description: 'Focused on developing scalable apps and learning new technologies.',
-  interest: ['Web Development', 'Mobile Development', 'UI/IX Design'],
-  socials: {
-    github: 'https://github.com/SamuelAlac',
-    linkedin: 'https://www.linkedin.com/in/samuel-alac-7a574534b/',
-  },
-}`
+import { CodeBlock } from "@/components/CodeBlocks"
+import { aboutMeCode } from "@/lib/constants/aboutMe"
 
 export const AboutMe = () => {
   return (
@@ -41,7 +13,7 @@ export const AboutMe = () => {
           </div>
         </div>
         <div className='hidden xl:block'>
-          <CodeBlockDemo code={aboutMeCode} language={'js'}/>
+          <CodeBlock code={aboutMeCode} language={'js'}/>
         </div>
     </section>
   )
