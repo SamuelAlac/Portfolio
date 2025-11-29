@@ -4,7 +4,7 @@ import { FaCode } from "react-icons/fa6";
 
 export const CareerStats = () => {
   return (
-    <section className="md:w-sm min-h-60">
+    <section className="w-full md:w-sm min-h-60">
         <div className="flex flex-col items-center md:items-start gap-3">
           <h1 className="ps-3 pt-3 text-3xl">Career Stats</h1>
           <div className="h-40 min-h-fit w-fit grid grid-cols-1 md:grid-cols-2 gap-4 p-2">
