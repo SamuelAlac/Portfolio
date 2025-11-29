@@ -10,8 +10,8 @@ const items = [
   { title: "Dashboard", url: "/Dashboard", icon: ChartNoAxesCombined },
   { title: "Achievements", url: "/Achievements", icon: Trophy },
   { title: "Projects", url: "/Projects", icon: FolderOpen },
-  { title: "Blogs", url: "/Blogs", icon: BookText },
-  { title: "Chatbot", url: "/Chatbot", icon: Bot },
+  // { title: "Blogs", url: "/Blogs", icon: BookText },
+  // { title: "Chatbot", url: "/Chatbot", icon: Bot },
 ]
 
 export function AppSidebar() {

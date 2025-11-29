@@ -1,5 +1,6 @@
 import { HeroCarousel } from "@/components/HeroCarousel"
 import { Carousel, CarouselContent } from "@/components/ui/carousel"
+import { featuredImgs } from "@/lib/constants/featured"
 import Autoplay from 'embla-carousel-autoplay'
 import { useRef } from "react"
 import { ReactTyped } from 'react-typed'
@@ -15,8 +16,8 @@ export const Hero = () => {
           <Carousel opts={{ loop: true }} plugins={[plugin.current]} 
           onMouseEnter={() => plugin.current.stop} onMouseLeave={() => plugin.current.play}>
             <CarouselContent className="-ml-0">
-              {Array.from({ length: 5 }).map((_, index) => (
-                <HeroCarousel key={index}/>
+              {featuredImgs.map((featuredImage, index) => (
+                <HeroCarousel featuredImage={featuredImage} key={index}/>
               ))}
             </CarouselContent>
           </Carousel>

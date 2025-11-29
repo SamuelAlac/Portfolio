@@ -10,9 +10,9 @@ import AboutPage from './pages/aboutpage/AboutPage.tsx'
 import AchievementsPage from './pages/achievementspage/AchievementsPage.tsx'
 import ProjectsPage from './pages/projectspage/ProjectsPage.tsx'
 import DashboardPage from './pages/dashboardpage/DashboardPage.tsx'
-import ChatbotPage from './pages/chatbotpage/ChatbotPage.tsx'
+// import ChatbotPage from './pages/chatbotpage/ChatbotPage.tsx'
 import ProjectDetailPage from './pages/projectspage/view/ProjectDetailPage.tsx'
-import BlogPage from './pages/blogpage/BlogPage.tsx'
+// import BlogPage from './pages/blogpage/BlogPage.tsx'
 import { GoogleOAuthProvider } from '@react-oauth/google'
 import { Provider } from 'react-redux'
 import { store } from './store/store.ts'
@@ -52,14 +52,14 @@ const router = createBrowserRouter([
           { path: ':repo', element: <ProjectDetailPage/> }
         ]
       },
-      {
-        path: '/Blogs',
-        element: <BlogPage/>
-      },
-      {
-        path: '/Chatbot',
-        element: <ChatbotPage/>
-      },
+      // {
+      //   path: '/Blogs',
+      //   element: <BlogPage/>
+      // },
+      // {
+      //   path: '/Chatbot',
+      //   element: <ChatbotPage/>
+      // },
       {
         path: '/Login',
         element: <LoginPage/>
