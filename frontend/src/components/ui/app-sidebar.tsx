@@ -1,4 +1,4 @@
-import { ChartNoAxesCombined, Home, UserRound, Trophy, FolderOpen, BookText, Bot } from "lucide-react"
+import { ChartNoAxesCombined, Home, UserRound, Trophy, FolderOpen } from "lucide-react"
 import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent } from "@/components/ui/sidebar"
 import { Profile } from "../profile"
 import { NavLink } from "react-router-dom"
