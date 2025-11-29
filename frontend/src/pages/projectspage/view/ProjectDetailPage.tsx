@@ -19,7 +19,7 @@ const ProjectDetailPage = () => {
   if (!project?.readMe){
     return (
       <div className="h-full flex justify-center items-center">
-        <h1 className="text-center text-4xl">Info Not Found</h1>
+        <h1 className="text-center text-4xl text-[#CBACF9]">Oops! This project is either private or unavailable.</h1>
       </div>
     )
   }

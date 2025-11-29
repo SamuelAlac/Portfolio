@@ -37,7 +37,7 @@ export const projects = [
         ],
     },
     {
-        repo: 'GuideBot',
+        repo: 'SDPTAcademy',
         name: 'SDPT Academy',
         image: '/projects/SDPTAcademy.png',
         startDate: '2025',

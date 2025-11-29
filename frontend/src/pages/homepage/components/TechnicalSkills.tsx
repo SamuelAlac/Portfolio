@@ -14,7 +14,7 @@ export const TechnicalSkills = () => {
               <TabsTrigger className="text-[10px] md:text-sm" value="Testing">Testing</TabsTrigger>
               <TabsTrigger className="text-[10px] md:text-sm" value="Tools">Tools</TabsTrigger>
             </TabsList>
-            <TabsContent className="ps-0.5 md:ps-2.5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-5 gap-2 md:gap-5" value="Frontend">
+            <TabsContent className="ps-0.5 md:ps-2.5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-5 gap-3.5 md:gap-5" value="Frontend">
               {frontendskills.map((skill, index) =>(
                   <SkillsBadge skill={skill} key={index}/>
               ))}
