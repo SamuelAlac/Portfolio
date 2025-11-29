@@ -8,7 +8,8 @@ import Seo from "@/Seo"
 const HomePage = () => {
   return (
     <>
-    <Seo title="Home | Samuel Alac Portfolio" description="My Career Stats, skills, specialization and contact" />
+    <Seo title="Home | Samuel Alac Portfolio" description="My Career Stats, skills, specialization and contact"
+    image="/homeseo.webp" />
       <div className="space-y-5 flex flex-col lg:flex-row md:space-y-0">
         <div className="md:flex-grow space-y-5">
           <Hero/>
