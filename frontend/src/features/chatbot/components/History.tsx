@@ -35,7 +35,7 @@ export const History = () => {
   }
 
   return (
-    <div className="mt-10 px-3 text-white space-y-5">
+    <div className="mt-10 px-3 min-h-fit text-white space-y-5">
         {history.map((chat: any, index: number) =>(
           <div key={index} className={`flex flex-col text-2xl ${chat.type === 'human' ? 'justify-end' : ''} `}>
               <p className={`text-2xl mt-3 ${chat.type === 'human' ? 'text-end' : ''} `}>

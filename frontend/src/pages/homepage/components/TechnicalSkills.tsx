@@ -7,7 +7,7 @@ export const TechnicalSkills = () => {
     <section className="w-full min-h-60">
         <div className="space-y-5">
           <Tabs defaultValue="Frontend" className="w-full">
-            <TabsList className="mb-5">
+            <TabsList className="mb-5 text-[#CBACF9]">
               <TabsTrigger className="text-[10px] md:text-sm" value="Frontend">Frontend</TabsTrigger>
               <TabsTrigger className="text-[10px] md:text-sm" value="Backend">Backend</TabsTrigger>
               <TabsTrigger className="text-[10px] md:text-sm" value="AI">AI / ML</TabsTrigger>

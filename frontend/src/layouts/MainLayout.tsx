@@ -7,15 +7,15 @@ import { Nav } from "@/components/Nav"
 
 export const MainLayout = () => {
   return (
-    <div className="flex flex-col min-h-screen min-w-full bg-linear-90 from-[#04071D] to-[#0C0E23] text-white">
+    <div className="flex flex-col min-h-screen min-w-full text-white">
       <ThemeProvider>
         <SidebarProvider>
           <AppSidebar/>
           
-        <main className="w-full flex flex-col">
+        <main className="w-full flex flex-col bg-[#000319]">
             <HelmetProvider>
             <Nav/>
-            <div className="[&_section]:bg-[#18181B] m-3 flex-grow">
+            <div className="[&_section]:bg-gradient-to-r [&_section]:from-[#04071D] [&_section]:to-[#0C0E23] m-3 flex-grow">
               <Outlet/>
             </div>
             </HelmetProvider>
