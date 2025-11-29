@@ -23,7 +23,7 @@ export const Hero = () => {
           </Carousel>
           <div className="absolute bottom-[10%] left-[3%] text-white">
             <h1 className="text-xl md:text-3xl font-medium">Hello World, I am <span className="font-semibold">Samuel</span></h1>
-            <h1 className="text-lg md:text-2xl font-medium">A <ReactTyped strings={['Web Developer', 'Mobile Developer', 'Designer']}
+            <h1 className="text-lg md:text-2xl font-medium">A <ReactTyped strings={['Web Developer', 'Mobile Developer', 'UI/UX Designer']}
             typeSpeed={100} loop backSpeed={20} cursorChar="|" showCursor={true} /></h1>
           </div>
     </section>
