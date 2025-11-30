@@ -1,4 +1,5 @@
 import { CodeBlock } from "@/components/CodeBlock"
+import { Skeleton } from "@/components/ui/skeleton"
 import { aboutMeCode } from "@/lib/constants/aboutMe"
 
 export const AboutMe = () => {
@@ -18,3 +19,21 @@ export const AboutMe = () => {
     </section>
   )
 }
+
+export const AboutMeSkeleton = () => {
+  return (
+    <section className="w-full min-h-fit h-78">
+        <div className="p-3 space-y-5">
+          <Skeleton className="h-8 w-50 bg-white/20 rounded-2xl"/>
+          <div className="max-w-180 space-y-5.5">
+            <Skeleton className="h-5 w-170 bg-white/20 rounded-2xl"/>
+            <Skeleton className="h-5 w-170 bg-white/20 rounded-2xl"/>
+            <Skeleton className="h-5 w-170 bg-white/20 rounded-2xl"/>
+            <Skeleton className="h-5 w-170 bg-white/20 rounded-2xl"/>
+            <Skeleton className="h-5 w-170 bg-white/20 rounded-2xl"/>
+          </div>
+        </div>
+    </section>
+  )
+}
+
