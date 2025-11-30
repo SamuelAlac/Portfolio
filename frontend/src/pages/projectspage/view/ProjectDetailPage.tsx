@@ -1,4 +1,7 @@
-import { ReadMeViewer } from "@/components/ReadMeViewer";
+import { lazy } from "react";
+const LazyReadMeViewer = lazy(() => import('@/components/ReadMeViewer').then(module =>{
+  return { default: module.ReadMeViewer }
+}))
 import { useProject } from "@/features/github/hooks";
 import { useParams } from "react-router-dom"
 
@@ -27,8 +30,7 @@ const ProjectDetailPage = () => {
   return (
     <section className="p-3 h-full w-full">
       <div>
-        {/* <h1 className="text-center text-3xl">{repo}</h1> */}
-        <ReadMeViewer readMe={project.readMe}/>
+        <LazyReadMeViewer readMe={project.readMe}/>
       </div>
     </section>
   )

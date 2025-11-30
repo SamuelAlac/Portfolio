@@ -5,18 +5,11 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { lazy, Suspense } from 'react'
 const MainLayout = lazy(() => new Promise<{ default: React.ComponentType<any> }>((resolve) => {
 setTimeout(() => {import('@/layouts/MainLayout.tsx').then((module) => { resolve({ default: module.MainLayout }) })}, 1500)}));
-import HomePage from './pages/homepage/HomePage.tsx'
-import AboutPage from './pages/aboutpage/AboutPage.tsx'
-import AchievementsPage from './pages/achievementspage/AchievementsPage.tsx'
-import ProjectsPage from './pages/projectspage/ProjectsPage.tsx'
-import DashboardPage from './pages/dashboardpage/DashboardPage.tsx'
 // import ChatbotPage from './pages/chatbotpage/ChatbotPage.tsx'
-import ProjectDetailPage from './pages/projectspage/view/ProjectDetailPage.tsx'
 // import BlogPage from './pages/blogpage/BlogPage.tsx'
 import { GoogleOAuthProvider } from '@react-oauth/google'
 import { Provider } from 'react-redux'
 import { store } from './store/store.ts'
-import LoginPage from './pages/loginpage/LoginPage.tsx'
 import { Loading } from './pages/Loading.tsx'
 
 const client = new QueryClient();
@@ -31,25 +24,47 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <HomePage/>,
+        lazy: async () =>{
+          const homePage = await import('./pages/homepage/HomePage.tsx')
+          return { Component: homePage.default }
+        }
       },
       {
         path: '/About',
-        element: <AboutPage/>,
+        lazy: async () =>{
+          const aboutPage = await import('./pages/aboutpage/AboutPage.tsx')
+          return { Component: aboutPage.default }
+        }
       },
       {
         path: '/Dashboard',
-        element: <DashboardPage/>
+        lazy: async () =>{
+          const dashboardPage = await import('./pages/dashboardpage/DashboardPage.tsx')
+          return { Component: dashboardPage.default }
+        }
       },
       {
         path: '/Achievements',
-        element: <AchievementsPage/>
+        lazy: async () =>{
+          const achievementsPage = await import ('./pages/achievementspage/AchievementsPage.tsx')
+          return { Component: achievementsPage.default }
+        }
       },
       {
         path: '/Projects',
         children: [
-          { index: true, element: <ProjectsPage/> },
-          { path: ':repo', element: <ProjectDetailPage/> }
+          { index: true, 
+            lazy: async () =>{
+              const projectsPage = await import('./pages/projectspage/ProjectsPage.tsx')
+              return { Component: projectsPage.default }
+            }
+          },
+          { path: ':repo', 
+            lazy: async () =>{
+              const projectDetailPage = await import('./pages/projectspage/view/ProjectDetailPage.tsx')
+              return { Component: projectDetailPage.default }
+            }
+          }
         ]
       },
       // {
@@ -62,7 +77,17 @@ const router = createBrowserRouter([
       // },
       {
         path: '/Login',
-        element: <LoginPage/>
+        lazy: async () =>{
+          const loginPage = await import('./pages/loginpage/LoginPage.tsx')
+          return { Component: loginPage.default }
+        }
+      },
+      {
+        path: '*',
+        lazy: async () =>{
+          const notFoundPage = await import('./pages/NotFoundPage.tsx')
+          return { Component: notFoundPage.default }
+        }
       }
     ]
   }

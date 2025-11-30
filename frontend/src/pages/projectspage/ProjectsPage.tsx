@@ -1,7 +1,8 @@
-import { projects } from "@/lib/constants/projects"
-import { ProjectCard } from "./components/ProjectCard"
+import { lazy } from "react"
 import { useAuthUser } from "@/features/auth/hooks"
-
+const LazyProjectCards = lazy(() => import('./components/ProjectCards').then(module =>{
+  return { default: module.ProjectCards }
+}))
 
 const ProjectsPage = () => {
 
@@ -19,9 +20,7 @@ const ProjectsPage = () => {
           : ''}
         </div>
         <div className="space-y-4 grid lg:grid-cols-4 md:grid-cols-2 gap-6">
-            {projects.map((project, index) =>(
-              <ProjectCard key={index} project={project}/>
-            ))}
+            <LazyProjectCards/>
         </div>
       </div>
   )

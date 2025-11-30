@@ -1,4 +1,4 @@
-import { CodeBlock } from "@/components/CodeBlocks"
+import { CodeBlock } from "@/components/CodeBlock"
 import { aboutMeCode } from "@/lib/constants/aboutMe"
 
 export const AboutMe = () => {

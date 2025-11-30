@@ -1,11 +1,14 @@
 import { achievements } from "@/lib/constants/certificates"
-import { AchievementCard } from '@/components/AchievementCard'
+import { lazy } from "react"
+const LazyAchievementCard = lazy(() => import('@/components/AchievementCard').then(module =>{
+  return { default: module.AchievementCard }
+}))
 
 export const AchievementCards = () => {
   return (
     <>
       {achievements.map((achievement, index) =>(
-          <AchievementCard key={index} achievement={achievement}/>
+          <LazyAchievementCard key={index} achievement={achievement}/>
       ))}
     </>
   )

@@ -1,9 +1,20 @@
-import { CareerStats } from "./components/CareerStats"
-import { ContactMe } from "./components/ContactMe"
-import { Specialization } from "./components/Specialization"
-import { Hero } from "./components/Hero"
-import { TechnicalSkills } from "./components/TechnicalSkills"
 import Seo from "@/Seo"
+import { lazy } from "react"
+const LazyHero = lazy(() => import('./components/Hero').then(module => {
+  return { default: module.Hero }
+}))
+const LazyTechnicalSkills = lazy(() => import('./components/TechnicalSkills').then(module =>{
+  return { default: module.TechnicalSkills }
+}))
+const LazyCareerStats = lazy(() => import('./components/CareerStats').then(module => {
+  return { default: module.CareerStats }
+}))
+const LazySpecialization = lazy(() => import('./components/Specialization').then(module =>{
+  return { default: module.Specialization }
+}))
+const LazyContactMe = lazy(() => import('./components/ContactMe').then(module =>{
+  return { default: module.ContactMe }
+}))
 
 const HomePage = () => {
   return (
@@ -12,14 +23,14 @@ const HomePage = () => {
     image="/homeseo.webp" />
       <div className="space-y-5 flex flex-col lg:flex-row md:space-y-0">
         <div className="md:flex-grow space-y-5">
-          <Hero/>
-          <TechnicalSkills/>
+          <LazyHero/>
+          <LazyTechnicalSkills/>
         </div>
 
         <div className="space-y-5 lg:ms-5 md:mt-5 lg:mt-0">
-          <CareerStats/>
-          <Specialization/>
-          <ContactMe/>
+          <LazyCareerStats/>
+          <LazySpecialization/>
+          <LazyContactMe/>
         </div>
       </div>
     </>
