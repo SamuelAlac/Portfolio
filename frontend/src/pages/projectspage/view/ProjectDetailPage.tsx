@@ -1,9 +1,7 @@
-import { lazy } from "react";
-const LazyReadMeViewer = lazy(() => import('@/components/ReadMeViewer').then(module =>{
-  return { default: module.ReadMeViewer }
-}))
+import { ReadMeViewer } from "@/components/ReadMeViewer";
 import { useProject } from "@/features/github/hooks";
 import { useParams } from "react-router-dom"
+import { PreviewSkeleton } from "../components/PreviewSkeleton";
 
 const ProjectDetailPage = () => {
   const { repo } = useParams();
@@ -12,11 +10,7 @@ const ProjectDetailPage = () => {
   const { data: project, isLoading } = useProject({repo})
 
   if(isLoading){
-    return (
-      <div className="h-full flex justify-center items-center">
-        <h1 className="text-center text-4xl">Loading...</h1>
-      </div>
-    )
+    return <PreviewSkeleton/>
   }
 
   if (!project?.readMe){
@@ -30,7 +24,7 @@ const ProjectDetailPage = () => {
   return (
     <section className="p-3 h-full w-full">
       <div>
-        <LazyReadMeViewer readMe={project.readMe}/>
+        <ReadMeViewer readMe={project.readMe}/>
       </div>
     </section>
   )
